@@ -1,0 +1,12 @@
+{
+  "server-component": {
+    "welcome": "欢迎"
+  },
+  "counter": {
+    "increment": "增加",
+    "decrement": "递减"
+  },
+  "menu": {
+    "dashboard": "仪表板"
+  }
+}

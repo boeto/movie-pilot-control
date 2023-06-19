@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "env": {},
+  "configurations": [
+    {
+      "name": "Run Dev",
+      "command": "pnpm run dev",
+      "request": "launch",
+      "type": "node-terminal",
+      "skipFiles": ["<node_modules>/**"]
+    },
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:3002",
+      "webRoot": "${workspaceFolder}",
+      "skipFiles": ["<node_modules>/**"]
+    }
+  ],
+
+  "compounds": [
+    {
+      "name": "Dev Full",
+      "configurations": ["Run Dev", "Launch Chrome"]
+    }
+  ]
+}
