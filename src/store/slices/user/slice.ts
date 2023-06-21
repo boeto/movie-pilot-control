@@ -1,7 +1,5 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { type SliceLoginStatus } from '@/store';
+import { createSlice } from '@reduxjs/toolkit';
 import { userLoginAsync } from './thunks';
-import { SliceStatusName } from '../slices.types';
 import { UserSliceState } from './types';
 
 const initialState: UserSliceState = {

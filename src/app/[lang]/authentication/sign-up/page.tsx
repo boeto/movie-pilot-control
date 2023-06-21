@@ -8,7 +8,7 @@ import {
 } from '@/components/flowbite-react';
 import type { FC } from 'react';
 import Image from 'next/image';
-import { Logo } from '@/components';
+import { CardSizeName, Cards, Logo } from '@/components';
 
 const SignUpPage: FC = function () {
   return (
@@ -19,11 +19,12 @@ const SignUpPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Card
+      <Cards
+        size={CardSizeName.LARGE}
         horizontal
         imgSrc="/images/authentication/create-account.jpg"
         imgAlt=""
-        className="w-full md:max-w-[1024px] [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-full [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           Create a Free Account
@@ -77,7 +78,7 @@ const SignUpPage: FC = function () {
             </a>
           </p>
         </form>
-      </Card>
+      </Cards>
     </div>
   );
 };

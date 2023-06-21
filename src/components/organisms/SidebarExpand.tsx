@@ -23,6 +23,7 @@ import { Sidebar, TextInput, Tooltip } from '@/components/flowbite-react';
 import { LanguageDropdown } from '@/components';
 
 import { useSidebarContext, isSmallScreen } from '@/utils';
+import Link from 'next/link';
 
 const SidebarExpand: FC = function () {
   const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } =
@@ -64,6 +65,7 @@ const SidebarExpand: FC = function () {
             <Sidebar.Items>
               <Sidebar.ItemGroup>
                 <Sidebar.Item
+                  as={Link}
                   href="/"
                   icon={HiChartPie}
                   className={
@@ -72,7 +74,9 @@ const SidebarExpand: FC = function () {
                 >
                   仪表盘
                 </Sidebar.Item>
+
                 <Sidebar.Item
+                  as={Link}
                   href="/search"
                   icon={HiViewGrid}
                   className={
@@ -83,100 +87,61 @@ const SidebarExpand: FC = function () {
                 >
                   资源搜索
                 </Sidebar.Item>
+
                 <Sidebar.Item
-                  href="/mailing/inbox"
+                  as={Link}
+                  href="/toolbox"
                   icon={HiInboxIn}
                   label="3"
                   className={
-                    '/mailing/inbox' === currentPage
+                    '/toolbox' === currentPage
                       ? 'bg-gray-100 dark:bg-gray-700'
                       : ''
                   }
                 >
-                  Inbox
+                  工具箱
                 </Sidebar.Item>
+
                 <Sidebar.Collapse
                   icon={HiShoppingBag}
-                  label="E-commerce"
+                  label="插件"
                   open={isEcommerceOpen}
                 >
                   <Sidebar.Item
-                    href="/e-commerce/products"
+                    as={Link}
+                    href="/plugins/installed"
                     className={
-                      '/e-commerce/products' === currentPage
+                      '/plugins/installed' === currentPage
                         ? 'bg-gray-100 dark:bg-gray-700'
                         : ''
                     }
                   >
-                    Products
+                    已安装
                   </Sidebar.Item>
                   <Sidebar.Item
-                    href="/e-commerce/billing"
+                    as={Link}
+                    href="/plugins/not-installed"
                     className={
-                      '/e-commerce/billing' === currentPage
+                      '/plugins/not-installed' === currentPage
                         ? 'bg-gray-100 dark:bg-gray-700'
                         : ''
                     }
                   >
-                    Billing
+                    未安装
                   </Sidebar.Item>
                   <Sidebar.Item
-                    href="/e-commerce/invoice"
+                    as={Link}
+                    href="/plugins/all"
                     className={
-                      '/e-commerce/invoice' === currentPage
+                      '/plugins/all' === currentPage
                         ? 'bg-gray-100 dark:bg-gray-700'
                         : ''
                     }
                   >
-                    Invoice
+                    全部
                   </Sidebar.Item>
                 </Sidebar.Collapse>
-                <Sidebar.Collapse
-                  icon={HiUsers}
-                  label="Users"
-                  open={isUsersOpen}
-                >
-                  <Sidebar.Item
-                    href="/users/list"
-                    className={
-                      '/users/list' === currentPage
-                        ? 'bg-gray-100 dark:bg-gray-700'
-                        : ''
-                    }
-                  >
-                    Users list
-                  </Sidebar.Item>
-                  <Sidebar.Item
-                    href="/users/profile"
-                    className={
-                      '/users/profile' === currentPage
-                        ? 'bg-gray-100 dark:bg-gray-700'
-                        : ''
-                    }
-                  >
-                    Profile
-                  </Sidebar.Item>
-                  <Sidebar.Item
-                    href="/users/feed"
-                    className={
-                      '/users/feed' === currentPage
-                        ? 'bg-gray-100 dark:bg-gray-700'
-                        : ''
-                    }
-                  >
-                    Feed
-                  </Sidebar.Item>
-                  <Sidebar.Item
-                    href="/users/settings"
-                    className={
-                      '/users/settings' === currentPage
-                        ? 'bg-gray-100 dark:bg-gray-700'
-                        : ''
-                    }
-                  >
-                    Settings
-                  </Sidebar.Item>
-                </Sidebar.Collapse>
+
                 <Sidebar.Collapse icon={HiChartSquareBar} label="Pages">
                   <Sidebar.Item href="/pages/pricing">Pricing</Sidebar.Item>
                   <Sidebar.Item href="/pages/maintenance">
@@ -187,20 +152,75 @@ const SidebarExpand: FC = function () {
                     500 server error
                   </Sidebar.Item>
                 </Sidebar.Collapse>
+
+                <Sidebar.Collapse
+                  icon={HiUsers}
+                  label="Users"
+                  open={isUsersOpen}
+                >
+                  <Sidebar.Item
+                    as={Link}
+                    href="/users/list"
+                    className={
+                      '/users/list' === currentPage
+                        ? 'bg-gray-100 dark:bg-gray-700'
+                        : ''
+                    }
+                  >
+                    Users list
+                  </Sidebar.Item>
+                  <Sidebar.Item
+                    as={Link}
+                    href="/users/profile"
+                    className={
+                      '/users/profile' === currentPage
+                        ? 'bg-gray-100 dark:bg-gray-700'
+                        : ''
+                    }
+                  >
+                    Profile
+                  </Sidebar.Item>
+                  <Sidebar.Item
+                    as={Link}
+                    href="/users/feed"
+                    className={
+                      '/users/feed' === currentPage
+                        ? 'bg-gray-100 dark:bg-gray-700'
+                        : ''
+                    }
+                  >
+                    Feed
+                  </Sidebar.Item>
+                  <Sidebar.Item
+                    as={Link}
+                    href="/users/settings"
+                    className={
+                      '/users/settings' === currentPage
+                        ? 'bg-gray-100 dark:bg-gray-700'
+                        : ''
+                    }
+                  >
+                    Settings
+                  </Sidebar.Item>
+                </Sidebar.Collapse>
+
                 <Sidebar.Collapse icon={HiLockClosed} label="Authentication">
-                  <Sidebar.Item href="/authentication/sign-in">
+                  <Sidebar.Item as={Link} href="/authentication/sign-in">
                     Sign in
                   </Sidebar.Item>
-                  <Sidebar.Item href="/authentication/sign-up">
+                  <Sidebar.Item as={Link} href="/authentication/sign-up">
                     Sign up
                   </Sidebar.Item>
-                  <Sidebar.Item href="/authentication/forgot-password">
+                  <Sidebar.Item
+                    as={Link}
+                    href="/authentication/forgot-password"
+                  >
                     Forgot password
                   </Sidebar.Item>
-                  <Sidebar.Item href="/authentication/reset-password">
+                  <Sidebar.Item as={Link} href="/authentication/reset-password">
                     Reset password
                   </Sidebar.Item>
-                  <Sidebar.Item href="/authentication/profile-lock">
+                  <Sidebar.Item as={Link} href="/authentication/profile-lock">
                     Profile lock
                   </Sidebar.Item>
                 </Sidebar.Collapse>

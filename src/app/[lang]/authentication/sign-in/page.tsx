@@ -10,17 +10,17 @@ import type { ChangeEvent, FC, FormEvent } from 'react';
 import { useState } from 'react';
 import * as yup from 'yup';
 
-import { Logo } from '@/components';
+import { Logo, Cards, CardSizeName } from '@/components';
 import { useSelector, useDispatch, selectUser, userLoginAsync } from '@/store';
 import { useRouter } from 'next/navigation';
 
-type Props = {
+interface Props {
   label: string;
   name: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   error: string | undefined;
-};
+}
 
 function Input(props: Props) {
   const { label, name, value, onChange, error } = props;
@@ -61,10 +61,6 @@ const SignInPage: FC = function () {
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
-    // console.log(
-    //   '🚀 ~ file: page.tsx:77 ~ handleInputChange ~ event.target:',
-    //   event.target,
-    // );
     setFormData((prevFormData) => {
       return { ...prevFormData, [name]: value };
     });
@@ -85,10 +81,6 @@ const SignInPage: FC = function () {
           password: formData.password,
         }),
       );
-
-      console.log('🚀 ~ file: page.tsx:after ~ isLoading:', isLoading);
-      console.log('🚀 ~ file: page.tsx:after ~ isLogin:', isLogin);
-      console.log('🚀 ~ file: page.tsx:after ~ access_token:', access_token);
       if (error) {
         throw new Error(error.message);
       }
@@ -108,11 +100,12 @@ const SignInPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Card
+      <Cards
+        size={CardSizeName.LARGE}
         horizontal
         imgSrc="/images/authentication/login.jpg"
         imgAlt=""
-        className="w-full md:max-w-[1024px] [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-full [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           Sign in to platform
@@ -162,7 +155,7 @@ const SignInPage: FC = function () {
             </a>
           </p>
         </form>
-      </Card>
+      </Cards>
     </div>
   );
 };

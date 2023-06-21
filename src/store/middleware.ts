@@ -1,5 +1,4 @@
-/* Core */
-import { createLogger } from 'redux-logger'
+import { createLogger } from 'redux-logger';
 
 const middleware = [
   createLogger({
@@ -15,6 +14,6 @@ const middleware = [
     },
     predicate: () => typeof window !== 'undefined',
   }),
-]
+];
 
-export { middleware }
+export { middleware };

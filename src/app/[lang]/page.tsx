@@ -1,8 +1,8 @@
-import { Counter, Counter2, LocaleSwitcher, User } from '@/components';
-import { Button, CustomFlowbiteTheme } from '@/components/flowbite-react';
+import { ShowCounter, Counter2, LocaleSwitcher } from '@/components';
+import { Button } from '@/components/flowbite-react';
 import { Locale, getDictionary } from '@/utils';
 
-export default async function Home({
+export default async function HomePage({
   params: { lang },
 }: {
   params: { lang: Locale };
@@ -11,10 +11,8 @@ export default async function Home({
 
   return (
     <>
-      <Button color="primary">Test Button</Button>
-
       <div className="text-center">
-        {/* <User></User> */}
+        <p>process.env.NODE_ENV:{process.env.NODE_ENV}</p>
         <LocaleSwitcher />
         <p>
           Current locale: <span className="text-yellow-500">{lang}</span>
@@ -25,9 +23,10 @@ export default async function Home({
             {dictionary['server-component'].welcome}
           </span>
         </p>
-        <Counter dictionary={dictionary.counter} />
+        <ShowCounter dictionary={dictionary.counter} />
         <Counter2 />
       </div>
+      <Button color="primary">Test Button</Button>
     </>
   );
 }

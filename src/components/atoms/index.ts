@@ -3,3 +3,4 @@ export * from './SidebarContext';
 export * from './Counter/ShowCounter';
 export * from './Counter';
 export * from './Logo';
+export * from './DarkMode';

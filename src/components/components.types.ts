@@ -6,3 +6,9 @@ export enum ComponentStatusName {
   ERROR = 'error',
   DISABLED = 'disabled',
 }
+
+export enum ComponentSizeName {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}

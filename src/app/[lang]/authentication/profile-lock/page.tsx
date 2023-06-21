@@ -9,7 +9,7 @@ import {
 import type { FC } from 'react';
 import { HiLockOpen } from 'react-icons/hi';
 import Image from 'next/image';
-import { Logo } from '@/components';
+import { CardSizeName, Cards, Logo } from '@/components';
 
 const ProfileLockPage: FC = function () {
   return (
@@ -20,7 +20,10 @@ const ProfileLockPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Card className="w-full md:max-w-[640px] md:[&>*]:w-full md:[&>*]:p-16">
+      <Cards
+        size={CardSizeName.LARGE}
+        className="w-full md:max-w-[640px] md:[&>*]:w-full md:[&>*]:p-16"
+      >
         <div className="flex items-center gap-x-4">
           <Image
             width={36}
@@ -62,7 +65,7 @@ const ProfileLockPage: FC = function () {
             </Button>
           </div>
         </form>
-      </Card>
+      </Cards>
     </div>
   );
 };

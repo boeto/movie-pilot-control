@@ -4,7 +4,7 @@ import { selectCount, useSelector } from '@/store';
 import { useState } from 'react';
 
 function ShowCounter({}: {
-  dictionary: {
+  dictionary?: {
     increment: string;
     decrement: string;
   };
@@ -16,4 +16,4 @@ function ShowCounter({}: {
     </p>
   );
 }
-export { ShowCounter as Counter };
+export { ShowCounter };
