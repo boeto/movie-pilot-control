@@ -6,9 +6,14 @@
     "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start -p 3002",
-    "lint": "next lint",
+    "lint": "next lint --max-warnings=0",
+    "lint-fix": "next lint --fix",
+    "prettier": "prettier --write src",
+    "pnpm-i": "pnpm install --frozen-lockfile",
     "preinstall": "npx only-allow pnpm",
-    "pnpm-i": "pnpm install --frozen-lockfile"
+    "prepare": "husky install",
+    "commit": "czg",
+    "ca": "czg ai"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "~0.4.0",
@@ -20,8 +25,6 @@
     "@types/redux-logger": "~3.0.9",
     "autoprefixer": "~10.4.14",
     "classnames": "~2.3.2",
-    "eslint": "~8.42.0",
-    "eslint-config-next": "~13.4.6",
     "flowbite": "~1.6.6",
     "flowbite-react": "~0.4.9",
     "negotiator": "~0.6.3",
@@ -39,6 +42,22 @@
     "yup": "~1.2.0"
   },
   "devDependencies": {
-    "only-allow": "~1.1.1"
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.6.1",
+    "czg": "^1.6.1",
+    "eslint": "~8.42.0",
+    "eslint-config-next": "~13.4.6",
+    "husky": "^8.0.0",
+    "install": "^0.13.0",
+    "lint-staged": "^13.2.2",
+    "only-allow": "~1.1.1",
+    "prettier": "^2.8.8"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
   }
 }
