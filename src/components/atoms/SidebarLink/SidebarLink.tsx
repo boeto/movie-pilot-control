@@ -1,4 +1,4 @@
-import { Sidebar } from '@/components/flowbite-react';
+import { Sidebar } from '@/components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, PropsWithChildren } from 'react';

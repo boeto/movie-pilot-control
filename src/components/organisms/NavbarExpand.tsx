@@ -19,13 +19,16 @@ import {
 import Image from 'next/image';
 import type { FC } from 'react';
 import {
-  Avatar,
-  Dropdown,
-  Label,
+  DarkModeToggle,
+  Logo,
+  ShowCounter,
   Navbar,
   TextInput,
-} from '@/components/flowbite-react';
-import { DarkModeToggle, Logo, ShowCounter, ShowUserInfo } from '@/components';
+  Label,
+  Dropdown,
+  Avatar,
+  ShowUserInfo,
+} from '@/components';
 import { isSmallScreen, useSidebarContext } from '@/utils';
 
 const NavbarExpand: FC = function () {
@@ -61,7 +64,7 @@ const NavbarExpand: FC = function () {
                 Search
               </Label>
               <TextInput
-                icon={HiSearch}
+                // icon={HiSearch}
                 id="search"
                 name="search"
                 placeholder="Search"
@@ -73,7 +76,7 @@ const NavbarExpand: FC = function () {
           </div>
           <div className="flex items-center lg:gap-3">
             <ShowCounter></ShowCounter>
-            {/* <ShowUserInfo></ShowUserInfo> */}
+            <ShowUserInfo></ShowUserInfo>
             <div className="flex items-center">
               <button
                 onClick={() => setOpenOnSmallScreens(!isOpenOnSmallScreens)}

@@ -1,12 +1,11 @@
 'use client';
-import { Footer } from '@/components/flowbite-react';
 import type { FC, PropsWithChildren } from 'react';
-import { SidebarExpand, SidebarProvider } from '@/components';
+import { SidebarExpand, SidebarProvider, Footer } from '@/components';
 import NavbarExpand from './NavbarExpand';
 import { MdFacebook } from 'react-icons/md';
 import { FaDribbble, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
-import classNames from 'classnames';
 import { useSidebarContext } from '@/utils';
+import { twMerge } from 'tailwind-merge';
 
 interface NavbarSidebarLayoutProps {
   isFooter?: boolean;
@@ -33,7 +32,7 @@ const MainContent: FC<PropsWithChildren<NavbarSidebarLayoutProps>> = function ({
 
   return (
     <main
-      className={classNames(
+      className={twMerge(
         'overflow-y-auto relative w-full h-full bg-gray-50 dark:bg-gray-900',
         isSidebarOpen ? 'lg:ml-16' : 'lg:ml-64',
       )}

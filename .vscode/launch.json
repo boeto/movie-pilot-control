@@ -6,16 +6,16 @@
       "name": "Run Dev",
       "command": "pnpm run dev",
       "request": "launch",
-      "type": "node-terminal",
-      "skipFiles": ["<node_modules>/**"]
+      "type": "node-terminal"
+      // "skipFiles": ["<node_modules>/**"]
     },
     {
       "name": "Launch Chrome",
       "request": "launch",
       "type": "chrome",
       "url": "http://localhost:3002",
-      "webRoot": "${workspaceFolder}",
-      "skipFiles": ["<node_modules>/**"]
+      "webRoot": "${workspaceFolder}"
+      // "skipFiles": ["<node_modules>/**"]
     }
   ],
 

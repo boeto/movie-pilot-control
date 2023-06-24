@@ -1,14 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  TextInput,
-} from '@/components/flowbite-react';
+import { Checkbox, Label, TextInput } from '@/components/flowbite-react';
 import type { FC } from 'react';
 import Image from 'next/image';
-import { CardSizeName, Cards, Logo } from '@/components';
+import { Card, Logo, Button } from '@/components';
 
 const ResetPasswordPage: FC = function () {
   return (
@@ -19,12 +13,11 @@ const ResetPasswordPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Cards
-        size={CardSizeName.LARGE}
+      <Card
         horizontal
         imgSrc="/images/authentication/reset-password.jpg"
         imgAlt=""
-        className="w-full [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-full md:max-w-5xl [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           Reset your password
@@ -72,7 +65,7 @@ const ResetPasswordPage: FC = function () {
             </Button>
           </div>
         </form>
-      </Cards>
+      </Card>
     </div>
   );
 };

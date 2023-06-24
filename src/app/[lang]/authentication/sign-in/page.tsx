@@ -1,16 +1,10 @@
 'use client';
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  TextInput,
-} from '@/components/flowbite-react';
+import { Checkbox, Label, TextInput } from '@/components/flowbite-react';
 import type { ChangeEvent, FC, FormEvent } from 'react';
 import { useState } from 'react';
 import * as yup from 'yup';
 
-import { Logo, Cards, CardSizeName } from '@/components';
+import { Logo, Card, Button } from '@/components';
 import { useSelector, useDispatch, selectUser, userLoginAsync } from '@/store';
 import { useRouter } from 'next/navigation';
 
@@ -100,12 +94,11 @@ const SignInPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Cards
-        size={CardSizeName.LARGE}
+      <Card
         horizontal
         imgSrc="/images/authentication/login.jpg"
         imgAlt=""
-        className="w-full [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-full md:max-w-5xl [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           Sign in to platform
@@ -155,7 +148,7 @@ const SignInPage: FC = function () {
             </a>
           </p>
         </form>
-      </Cards>
+      </Card>
     </div>
   );
 };

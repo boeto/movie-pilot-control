@@ -14,12 +14,12 @@ function LocaleSwitcher() {
   };
 
   return (
-    <div>
-      <p>Locale switcher:</p>
-      <ul>
+    <div className="text-center">
+      <p className="text-gray-900 dark:text-gray-100">Locale switcher:</p>
+      <ul className="">
         {i18nConfig.locales.map((locale) => {
           return (
-            <li key={locale} className="text-pink-500">
+            <li className="text-red-500" key={locale}>
               <Link href={redirectedPathName(locale)}>{locale}</Link>
             </li>
           );

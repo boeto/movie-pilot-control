@@ -7,7 +7,7 @@ export function Logo() {
       width={32}
       alt="Logo"
       src="/images/logo.svg"
-      className="mr-3 h-12"
+      className="mr-3 w-8 h-8"
     />
   );
 }

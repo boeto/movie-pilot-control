@@ -1,7 +1,6 @@
 'use client';
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import type { FC } from 'react';
-import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import {
   HiAdjustments,
@@ -19,11 +18,11 @@ import {
   HiViewGrid,
 } from 'react-icons/hi';
 
-import { Sidebar, TextInput, Tooltip } from '@/components/flowbite-react';
-import { LanguageDropdown } from '@/components';
+import { LanguageDropdown, Sidebar, TextInput, Tooltip } from '@/components';
 
 import { useSidebarContext, isSmallScreen } from '@/utils';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 
 const SidebarExpand: FC = function () {
   const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } =
@@ -43,9 +42,10 @@ const SidebarExpand: FC = function () {
 
   return (
     <div
-      className={classNames('lg:!block', {
-        hidden: !isSidebarOpenOnSmallScreens,
-      })}
+      className={twMerge(
+        'lg:!block',
+        !isSidebarOpenOnSmallScreens ? 'hidden' : '',
+      )}
     >
       <Sidebar
         aria-label="Sidebar with multi-level dropdown"

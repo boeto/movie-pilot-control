@@ -1,14 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  TextInput,
-} from '@/components/flowbite-react';
+import { Checkbox, Label, TextInput } from '@/components/flowbite-react';
 import type { FC } from 'react';
-import Image from 'next/image';
-import { CardSizeName, Cards, Logo } from '@/components';
+import { Card, Logo, Button } from '@/components';
 
 const SignUpPage: FC = function () {
   return (
@@ -19,12 +12,11 @@ const SignUpPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Cards
-        size={CardSizeName.LARGE}
+      <Card
         horizontal
         imgSrc="/images/authentication/create-account.jpg"
         imgAlt=""
-        className="w-full [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-full md:max-w-5xl [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           Create a Free Account
@@ -78,7 +70,7 @@ const SignUpPage: FC = function () {
             </a>
           </p>
         </form>
-      </Cards>
+      </Card>
     </div>
   );
 };

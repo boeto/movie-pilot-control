@@ -1,15 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  TextInput,
-} from '@/components/flowbite-react';
+import { Checkbox, Label, TextInput } from '@/components/flowbite-react';
 import type { FC } from 'react';
 import { HiLockOpen } from 'react-icons/hi';
 import Image from 'next/image';
-import { CardSizeName, Cards, Logo } from '@/components';
+import { Card, Logo, Button } from '@/components';
 
 const ProfileLockPage: FC = function () {
   return (
@@ -20,10 +14,7 @@ const ProfileLockPage: FC = function () {
           Flowbite
         </span>
       </div>
-      <Cards
-        size={CardSizeName.LARGE}
-        className="w-full md:max-w-[640px] md:[&>*]:w-full md:[&>*]:p-16"
-      >
+      <Card className="w-full md:max-w-2xl md:[&>*]:w-full md:[&>*]:p-16">
         <div className="flex items-center gap-x-4">
           <Image
             width={36}
@@ -65,7 +56,7 @@ const ProfileLockPage: FC = function () {
             </Button>
           </div>
         </form>
-      </Cards>
+      </Card>
     </div>
   );
 };

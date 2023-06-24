@@ -1,14 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  TextInput,
-} from '@/components/flowbite-react';
+import { Card, Checkbox, Label, TextInput } from '@/components/flowbite-react';
 import type { FC } from 'react';
-import Image from 'next/image';
-import { Logo } from '@/components';
+import { Logo, Button } from '@/components';
 
 const ForgotPasswordPage: FC = function () {
   return (

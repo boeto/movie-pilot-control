@@ -38,4 +38,4 @@ next-env.d.ts
 flowbite-theme-default.ts
 
 # log
-.log
+/.log

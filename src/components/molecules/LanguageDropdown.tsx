@@ -1,9 +1,4 @@
-import {
-  Dropdown,
-  Sidebar,
-  TextInput,
-  Tooltip,
-} from '@/components/flowbite-react';
+import { Dropdown } from '@/components';
 import { FC } from 'react';
 
 const LanguageDropdown: FC = function () {

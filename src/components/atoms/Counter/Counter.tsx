@@ -1,9 +1,5 @@
 'use client';
-
-/* Core */
 import { useState } from 'react';
-
-/* Instruments */
 import {
   counterSlice,
   useSelector,
@@ -12,7 +8,7 @@ import {
   incrementAsync,
   incrementIfOddAsync,
 } from '@/store';
-import styles from './counter.module.css';
+import { Button } from '@/components';
 
 export const Counter2 = () => {
   const dispatch = useDispatch();
@@ -20,52 +16,53 @@ export const Counter2 = () => {
   const [incrementAmount, setIncrementAmount] = useState(2);
 
   return (
-    <div>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
+    <div className="m-5">
+      <div className="flex items-center justify-center">
+        <Button
+          className="button mr-4"
           aria-label="Decrement value"
           onClick={() => dispatch(counterSlice.actions.decrement())}
         >
           -
-        </button>
-        <span className={styles.value}>{count}</span>
-        <button
-          className={styles.button}
+        </Button>
+        <span className="value">{count}</span>
+        <Button
+          className="button ml-4"
           aria-label="Increment value"
           onClick={() => dispatch(counterSlice.actions.increment())}
         >
           +
-        </button>
+        </Button>
       </div>
-      <div className={styles.row}>
+      <div className="flex items-center mt-4">
         <input
-          className={styles.textbox}
+          className="w-12 h-10 border-blue-500 border-2 rounded-md text-center"
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value ?? 0))}
         />
 
-        <button
-          className={styles.button}
+        <Button
+          className="button ml-4"
+          color="primary"
           onClick={() =>
             dispatch(counterSlice.actions.incrementByAmount(incrementAmount))
           }
         >
           Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
+        </Button>
+        <Button
+          className="asyncButton ml-4"
           onClick={() => dispatch(incrementAsync(incrementAmount))}
         >
           Add Async
-        </button>
-        <button
-          className={styles.button}
+        </Button>
+        <Button
+          className="button ml-4"
           onClick={() => dispatch(incrementIfOddAsync(incrementAmount))}
         >
           Add If Odd
-        </button>
+        </Button>
       </div>
     </div>
   );

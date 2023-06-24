@@ -1,5 +1,6 @@
 import { ShowCounter, Counter2, LocaleSwitcher } from '@/components';
-import { Button } from '@/components/flowbite-react';
+import { Button } from '@/components';
+// import { Button } from '@/components/flowbite-react';
 import { Locale, getDictionary } from '@/utils';
 
 export default async function HomePage({
@@ -11,22 +12,24 @@ export default async function HomePage({
 
   return (
     <>
-      <div className="text-center">
-        <p>process.env.NODE_ENV:{process.env.NODE_ENV}</p>
+      <div className="flex flex-col justify-center items-center h-3/5 mt-10">
+        <p className="text-gray-900 dark:text-gray-100">
+          process.env.NODE_ENV:{process.env.NODE_ENV}
+        </p>
         <LocaleSwitcher />
-        <p>
+        <p className="text-gray-900 dark:text-gray-100">
           Current locale: <span className="text-yellow-500">{lang}</span>
         </p>
-        <p>
+        <p className="text-gray-900 dark:text-gray-100">
           This text is rendered on the server:{' '}
           <span className="text-green-500">
             {dictionary['server-component'].welcome}
           </span>
         </p>
-        <ShowCounter dictionary={dictionary.counter} />
+        <ShowCounter />
         <Counter2 />
+        <Button color="primary">Test Button</Button>
       </div>
-      <Button color="primary">Test Button</Button>
     </>
   );
 }
