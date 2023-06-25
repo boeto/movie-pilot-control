@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
+# shellcheck source=/dev/null
 . "$(dirname -- "$0")/_/husky.sh"
 
-# echo "🐶  husky - commit-msg running..."
-# npx --no -- commitlint --edit "$1"
+echo "🐶  husky - commit-msg running..."
+npx --no -- commitlint --edit "$1"

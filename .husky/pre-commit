@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
+# shellcheck source=/dev/null
 . "$(dirname -- "$0")/_/husky.sh"
 
-# echo "🐶  husky - pre-commit running..."
-# npx lint-staged
+echo "🐶  husky - pre-commit running..."
+npx lint-staged

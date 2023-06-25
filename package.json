@@ -57,6 +57,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
+      "pnpm run lint-fix",
       "prettier --write"
     ]
   }

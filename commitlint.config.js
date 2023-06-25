@@ -1,16 +1,19 @@
 /** @type {import('cz-git').UserConfig} */
 
+// check commitlint is working
 // npx commitlint --from HEAD~1 --to HEAD --verbose
 
+// enable multiple scopes
 // const fs = require('fs');
 // const path = require('path');
 // const packages = fs.readdirSync(path.resolve(__dirname, 'src'));
 
 module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  // add rules
   //   rules: {
   //     // @see: https://commitlint.js.org/#/reference-rules
   //   },
-  extends: ['@commitlint/config-conventional'],
 
   prompt: {
     alias: { fd: 'docs: fix typos' },
@@ -68,6 +71,7 @@ module.exports = {
     useAI: false,
     aiNumber: 1,
     themeColorCode: '',
+    // enable multiple scopes
     // scopes: [...packages],
     // enableMultipleScopes: true,
     // scopeEnumSeparator: ',',
