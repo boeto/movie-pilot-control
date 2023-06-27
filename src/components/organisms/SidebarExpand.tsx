@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import {
   HiAdjustments,
   HiChartPie,
-  HiChartSquareBar,
   HiClipboard,
   HiCog,
   HiCollection,
@@ -29,16 +28,18 @@ const SidebarExpand: FC = function () {
     useSidebarContext();
 
   const [currentPage, setCurrentPage] = useState('');
-  const [isEcommerceOpen, setEcommerceOpen] = useState(true);
-  const [isUsersOpen, setUsersOpen] = useState(true);
+  const [isPluginsOpen, setPluginsOpen] = useState(false);
+  const [isUsersOpen, setUsersOpen] = useState(false);
+  const [isAuthenticationOpen, setAuthenticationOpen] = useState(false);
 
   useEffect(() => {
     const newPage = window.location.pathname;
 
     setCurrentPage(newPage);
-    setEcommerceOpen(newPage.includes('/e-commerce/'));
+    setPluginsOpen(newPage.includes('/plugins/'));
     setUsersOpen(newPage.includes('/users/'));
-  }, [setCurrentPage, setEcommerceOpen, setUsersOpen]);
+    setAuthenticationOpen(newPage.includes('/authentication/'));
+  }, [setCurrentPage, setPluginsOpen, setUsersOpen]);
 
   return (
     <div
@@ -105,7 +106,7 @@ const SidebarExpand: FC = function () {
                 <Sidebar.Collapse
                   icon={HiShoppingBag}
                   label="插件"
-                  open={isEcommerceOpen}
+                  open={isPluginsOpen}
                 >
                   <Sidebar.Item
                     as={Link}
@@ -139,17 +140,6 @@ const SidebarExpand: FC = function () {
                     }
                   >
                     全部
-                  </Sidebar.Item>
-                </Sidebar.Collapse>
-
-                <Sidebar.Collapse icon={HiChartSquareBar} label="Pages">
-                  <Sidebar.Item href="/pages/pricing">Pricing</Sidebar.Item>
-                  <Sidebar.Item href="/pages/maintenance">
-                    Maintenace
-                  </Sidebar.Item>
-                  <Sidebar.Item href="/pages/404">404 not found</Sidebar.Item>
-                  <Sidebar.Item href="/pages/500">
-                    500 server error
                   </Sidebar.Item>
                 </Sidebar.Collapse>
 
@@ -204,7 +194,11 @@ const SidebarExpand: FC = function () {
                   </Sidebar.Item>
                 </Sidebar.Collapse>
 
-                <Sidebar.Collapse icon={HiLockClosed} label="Authentication">
+                <Sidebar.Collapse
+                  icon={HiLockClosed}
+                  label="Authentication"
+                  open={isAuthenticationOpen}
+                >
                   <Sidebar.Item as={Link} href="/authentication/sign-in">
                     Sign in
                   </Sidebar.Item>

@@ -1,11 +1,5 @@
 'use client';
-import {
-  configureStore,
-  type ThunkAction,
-  type Action,
-  Reducer,
-  ReducersMapObject,
-} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
@@ -53,7 +47,6 @@ export const makeReduxStore = () => {
 };
 
 const { reduxStore, persistor } = makeReduxStore();
-console.log('🚀 ~ file: providers.tsx:9 ~ persistor:', persistor);
 
 const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;

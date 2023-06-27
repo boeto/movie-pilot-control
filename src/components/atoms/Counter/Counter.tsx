@@ -33,12 +33,7 @@ export const Counter2 = () => {
         >
           -
         </Button>
-        <span
-          className="text-gray-900 dark:text-gray-100"
-          suppressHydrationWarning
-        >
-          {count}
-        </span>
+        <span className="text-gray-900 dark:text-gray-100">{count}</span>
         <Button
           className="button ml-4"
           aria-label="Increment value"
