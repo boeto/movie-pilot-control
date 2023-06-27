@@ -13,7 +13,7 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "commit": "czg",
-    "ca": "czg ai"
+    "ca": "czg ai -N=5"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "~0.4.0",
