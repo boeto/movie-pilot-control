@@ -2,15 +2,15 @@
 
 import type { PropsWithChildren } from 'react';
 import type { SidebarContextProps } from '@/utils';
-import { isBrowser, isSmallScreen } from '@/utils';
+import { isClient, isSmallScreen } from '@/utils';
 import { createContext, useEffect, useState } from 'react';
 
 const SidebarContext = createContext<SidebarContextProps>(undefined!);
 
 function SidebarProvider({ children }: PropsWithChildren) {
-  const location = isBrowser() ? window.location.pathname : '/';
+  const location = isClient() ? window.location.pathname : '/';
   const [isOpen, setOpen] = useState(
-    isBrowser()
+    isClient()
       ? window.localStorage.getItem('isSidebarOpen') === 'true'
       : false,
   );

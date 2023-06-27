@@ -26,14 +26,14 @@ function RootLayout({
   params: { lang: string };
 }) {
   return (
-    <Providers>
-      <html lang={params.lang} suppressHydrationWarning>
-        <body className={`${inter.className} bg-gray-50 dark:bg-gray-900`}>
-          <DarkModeScript />
+    <html lang={params.lang} suppressHydrationWarning>
+      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900`}>
+        <DarkModeScript />
+        <Providers>
           <RootLayoutMain>{children}</RootLayoutMain>
-        </body>
-      </html>
-    </Providers>
+        </Providers>
+      </body>
+    </html>
   );
 }
 

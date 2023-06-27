@@ -1,9 +1,5 @@
-function isBrowser(): boolean {
-  return typeof window !== 'undefined';
-}
+const isClient = (): boolean => typeof window !== 'undefined';
 
-function isSmallScreen(): boolean {
-  return isBrowser() && window.innerWidth < 768;
-}
+const isSmallScreen = (): boolean => isClient() && window.innerWidth < 768;
 
-export { isBrowser, isSmallScreen };
+export { isClient, isSmallScreen };
