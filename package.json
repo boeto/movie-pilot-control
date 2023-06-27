@@ -8,11 +8,11 @@
     "start": "next start -p 3002",
     "lint": "next lint --max-warnings=0",
     "lint-fix": "next lint --fix",
-    "prettier": "prettier --write src",
+    "prettier": "prettier --ignore-unknown --write src",
     "pnpm-i": "pnpm install --frozen-lockfile",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "commit": "czg",
+    "commit": "czg --no-ai",
     "ca": "czg ai -N=5"
   },
   "dependencies": {
