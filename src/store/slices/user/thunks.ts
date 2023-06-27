@@ -1,4 +1,4 @@
-import { createAppAsyncThunk } from '../../async-thunk';
+import { createAppAsyncThunk } from '../../thunk';
 import { fetchLogin } from './fetch';
 import { LoginInfo } from './types';
 

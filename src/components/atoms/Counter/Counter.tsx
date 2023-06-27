@@ -9,10 +9,18 @@ import {
   incrementIfOddAsync,
 } from '@/store';
 import { Button } from '@/components';
+import { isClient } from '@/utils';
 
 export const Counter2 = () => {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
+
+  console.log(
+    '🚀🚀 ~ file: Counter.tsx:78 ~ Counter2 ~ isClient():',
+    String(isClient()),
+  );
+  console.log('🚀🚀🚀 ~ file: Counter.tsx:16 ~ Counter2 ~ count:', count);
+  isClient();
   const [incrementAmount, setIncrementAmount] = useState(2);
 
   return (
@@ -25,7 +33,7 @@ export const Counter2 = () => {
         >
           -
         </Button>
-        <span className="value">{count}</span>
+        <span className="text-gray-900 dark:text-gray-100">{count}</span>
         <Button
           className="button ml-4"
           aria-label="Increment value"
@@ -36,7 +44,7 @@ export const Counter2 = () => {
       </div>
       <div className="flex items-center mt-4">
         <input
-          className="w-12 h-10 border-blue-500 border-2 rounded-md text-center"
+          className="w-12 h-10 border-blue-500 border-2 rounded-md text-center text-gray-900 dark:bg-gray-800 dark:text-gray-100"
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value ?? 0))}
