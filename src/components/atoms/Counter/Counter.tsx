@@ -15,12 +15,6 @@ export const Counter2 = () => {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
 
-  console.log(
-    '🚀🚀 ~ file: Counter.tsx:78 ~ Counter2 ~ isClient():',
-    String(isClient()),
-  );
-  console.log('🚀🚀🚀 ~ file: Counter.tsx:16 ~ Counter2 ~ count:', count);
-  isClient();
   const [incrementAmount, setIncrementAmount] = useState(2);
 
   return (

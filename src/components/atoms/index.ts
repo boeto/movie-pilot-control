@@ -15,3 +15,4 @@ export * from './Dropdown';
 export * from './Avatar';
 export * from './Footer';
 export * from './Card';
+export * from './HelperText';

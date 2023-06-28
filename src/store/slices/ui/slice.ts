@@ -12,7 +12,6 @@ export const uiSlice = createSlice({
   initialState,
   reducers: {
     setModeState: (state, action: PayloadAction<ModeName>) => {
-      console.log('🚀 ~ file: slice.ts:18 ~ action.payload:', action.payload);
       state.mode = action.payload;
     },
   },

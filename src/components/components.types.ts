@@ -1,4 +1,4 @@
-export enum ComponentStatusName {
+export enum StatusName {
   PRIMARY = 'primary',
   INFO = 'info',
   SUCCESS = 'success',
@@ -7,8 +7,29 @@ export enum ComponentStatusName {
   DISABLED = 'disabled',
 }
 
-export enum ComponentSizeName {
+export enum SizeName {
   SMALL = 'small',
   MEDIUM = 'medium',
   LARGE = 'large',
+}
+
+export enum ColorsName {
+  PRIMARY = 'primary',
+  GRAY = 'gray',
+  INFO = 'info',
+  FAILURE = 'failure',
+  WARNING = 'warning',
+  SUCCESS = 'success',
+  BLUE = 'blue',
+  CYAN = 'cyan',
+  DARK = 'dark',
+  GREEN = 'green',
+  INDIGO = 'indigo',
+  LIGHT = 'light',
+  LIME = 'lime',
+  PINK = 'pink',
+  PURPLE = 'purple',
+  RED = 'red',
+  TEAL = 'teal',
+  YELLOW = 'yellow',
 }

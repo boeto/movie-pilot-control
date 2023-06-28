@@ -17,7 +17,7 @@ function LocaleSwitcher() {
     <div className="text-center">
       <p className="text-gray-900 dark:text-gray-100">Locale switcher:</p>
       <ul className="">
-        {i18nConfig.locales.map((locale) => {
+        {i18nConfig.Langs.map((locale) => {
           return (
             <li className="text-red-500" key={locale}>
               <Link href={redirectedPathName(locale)}>{locale}</Link>

@@ -1,11 +1,9 @@
-/* Core */
-import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-/* Instruments */
 import type { CounterSliceState } from './types';
+import { createSlice } from '@reduxjs/toolkit';
+import { SliceStatusName } from './types';
 import { incrementAsync } from './thunks';
-import { SliceStatusName } from '../slices.types';
 
 const initialState: CounterSliceState = {
   value: 0,

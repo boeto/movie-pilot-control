@@ -27,7 +27,8 @@ import {
   Label,
   Dropdown,
   Avatar,
-  ShowUserInfo,
+  ShowAuthInfo,
+  UserDropdown,
 } from '@/components';
 import { isSmallScreen, useSidebarContext } from '@/utils';
 
@@ -76,7 +77,7 @@ const NavbarExpand: FC = function () {
           </div>
           <div className="flex items-center lg:gap-3">
             <ShowCounter></ShowCounter>
-            <ShowUserInfo></ShowUserInfo>
+            {/* <ShowAuthInfo></ShowAuthInfo> */}
             <div className="flex items-center">
               <button
                 onClick={() => setOpenOnSmallScreens(!isOpenOnSmallScreens)}
@@ -89,7 +90,8 @@ const NavbarExpand: FC = function () {
               <AppDrawerDropdown />
               <DarkModeToggle />
             </div>
-            <div className="hidden lg:block">
+            <div className="">
+              {/* <div className="hidden lg:block"> */}
               <UserDropdown />
             </div>
           </div>
@@ -457,33 +459,6 @@ const AppDrawerDropdown: FC = function () {
           </div>
         </a>
       </div>
-    </Dropdown>
-  );
-};
-
-const UserDropdown: FC = function () {
-  return (
-    <Dropdown
-      arrowIcon={false}
-      inline
-      label={
-        <span>
-          <span className="sr-only">User menu</span>
-          <Avatar alt="" img="/images/users/neil-sims.png" rounded size="sm" />
-        </span>
-      }
-    >
-      <Dropdown.Header>
-        <span className="block text-sm">Neil Sims</span>
-        <span className="block truncate text-sm font-medium">
-          neil.sims@flowbite.com
-        </span>
-      </Dropdown.Header>
-      <Dropdown.Item>Dashboard</Dropdown.Item>
-      <Dropdown.Item>Settings</Dropdown.Item>
-      <Dropdown.Item>Earnings</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item>Sign out</Dropdown.Item>
     </Dropdown>
   );
 };
