@@ -1,6 +1,6 @@
 import { RootLayoutMain, DarkModeScript } from '@/components';
 import { Inter } from 'next/font/google';
-import { i18nConfig } from '@/utils';
+import { Lang, i18nConfig } from '@/utils';
 import { Providers } from '@/store';
 
 import '@/styles/globals.css';
@@ -9,7 +9,7 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export async function generateStaticParams() {
-  const lang = i18nConfig.locales.map((locale) => ({ lang: locale }));
+  const lang = i18nConfig.Langs.map((locale) => ({ lang: locale }));
   return lang;
 }
 
@@ -20,17 +20,18 @@ export const metadata: Metadata = {
 
 function RootLayout({
   children,
-  params,
+  params: { lang },
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: { lang: Lang };
 }) {
+  // const { lang } = params;
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html lang={lang}>
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-900`}>
         <DarkModeScript />
         <Providers>
-          <RootLayoutMain>{children}</RootLayoutMain>
+          <RootLayoutMain lang={lang}>{children}</RootLayoutMain>
         </Providers>
       </body>
     </html>

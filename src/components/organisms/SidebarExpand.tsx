@@ -38,7 +38,7 @@ const SidebarExpand: FC = function () {
     setCurrentPage(newPage);
     setPluginsOpen(newPage.includes('/plugins/'));
     setUsersOpen(newPage.includes('/users/'));
-    setAuthenticationOpen(newPage.includes('/authentication/'));
+    setAuthenticationOpen(newPage.includes('/auth/'));
   }, [setCurrentPage, setPluginsOpen, setUsersOpen]);
 
   return (
@@ -199,22 +199,19 @@ const SidebarExpand: FC = function () {
                   label="Authentication"
                   open={isAuthenticationOpen}
                 >
-                  <Sidebar.Item as={Link} href="/authentication/sign-in">
-                    Sign in
+                  <Sidebar.Item as={Link} href="/auth/login">
+                    Login
                   </Sidebar.Item>
-                  <Sidebar.Item as={Link} href="/authentication/sign-up">
+                  <Sidebar.Item as={Link} href="/auth/sign-up">
                     Sign up
                   </Sidebar.Item>
-                  <Sidebar.Item
-                    as={Link}
-                    href="/authentication/forgot-password"
-                  >
+                  <Sidebar.Item as={Link} href="/auth/forgot-password">
                     Forgot password
                   </Sidebar.Item>
-                  <Sidebar.Item as={Link} href="/authentication/reset-password">
+                  <Sidebar.Item as={Link} href="/auth/reset-password">
                     Reset password
                   </Sidebar.Item>
-                  <Sidebar.Item as={Link} href="/authentication/profile-lock">
+                  <Sidebar.Item as={Link} href="/auth/profile-lock">
                     Profile lock
                   </Sidebar.Item>
                 </Sidebar.Collapse>

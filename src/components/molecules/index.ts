@@ -1,2 +1,3 @@
 export * from './LanguageDropdown';
-export * from './User';
+export * from './Auth';
+export * from './UserDropdown';

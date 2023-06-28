@@ -6,10 +6,9 @@ import {
   type TypedUseSelectorHook,
 } from 'react-redux';
 
-import { rootReducer } from './reducer';
+import { persistedReducer, rootReducerWithResetAll } from './reducer';
 import { middleware } from './middleware';
-import { persistReducer, persistStore } from 'redux-persist';
-import { storage } from './storage';
+import { persistStore } from 'redux-persist';
 import { isClient } from '@/utils';
 import { ReduxDispatch, ReduxReducer, ReduxState } from './types';
 
@@ -26,16 +25,8 @@ const makeReduxStoreConfig = (reduxReducer: ReduxReducer) =>
 
 export const makeReduxStore = () => {
   if (!isClient()) {
-    return { reduxStore: makeReduxStoreConfig(rootReducer) };
+    return { reduxStore: makeReduxStoreConfig(rootReducerWithResetAll) };
   } else {
-    const persistConfig = {
-      key: 'root',
-      storage,
-      whitelist: ['user', 'counter'],
-    };
-
-    const persistedReducer = persistReducer(persistConfig, rootReducer);
-
     const reduxStore = makeReduxStoreConfig(
       persistedReducer as unknown as ReduxReducer,
     );

@@ -1,12 +1,12 @@
 import { ShowCounter, Counter2, LocaleSwitcher } from '@/components';
 import { Button } from '@/components';
 // import { Button } from '@/components/flowbite-react';
-import { Locale, getDictionary } from '@/utils';
+import { Lang, getDictionary } from '@/utils';
 
 export default async function HomePage({
   params: { lang },
 }: {
-  params: { lang: Locale };
+  params: { lang: Lang };
 }) {
   const dictionary = await getDictionary(lang);
 
