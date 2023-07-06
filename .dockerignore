@@ -1,0 +1,8 @@
+.env*
+__ENV.js
+node_modules
+.next
+.log
+.husky
+.vscode
+.git

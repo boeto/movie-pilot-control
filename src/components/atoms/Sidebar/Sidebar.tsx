@@ -1,20 +1,27 @@
 import { FC } from 'react';
-import type { SidebarComponentProps } from './types';
+
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
-import { sidebarCustomTheme } from './theme';
-import { SidebarItem } from './SidebarItem';
-import { SidebarItems } from './SidebarItems';
-import { SidebarItemGroup } from './SidebarItemGroup';
+
 import { SidebarCollapse } from './SidebarCollapse';
 import { SidebarCTA } from './SidebarCTA';
+import { SidebarItem } from './SidebarItem';
+import { SidebarItemGroup } from './SidebarItemGroup';
+import { SidebarItems } from './SidebarItems';
 import { SidebarLogo } from './SidebarLogo';
+import { sidebarCustomTheme } from './theme';
+import type { SidebarComponentProps } from './types';
 
 const SidebarComponent: FC<SidebarComponentProps> = ({
   children,
+  collapsed,
   ...props
 }) => {
   return (
-    <FlowbiteSidebar theme={sidebarCustomTheme} {...props}>
+    <FlowbiteSidebar
+      collapsed={collapsed}
+      theme={sidebarCustomTheme}
+      {...props}
+    >
       {children}
     </FlowbiteSidebar>
   );

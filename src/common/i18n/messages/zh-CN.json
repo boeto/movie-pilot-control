@@ -1,0 +1,77 @@
+{
+  "Sidebar": {
+    "dashboard": "仪表板",
+    "search": "搜索",
+
+    "discover": "发现",
+    "discoverRanking": "榜单推荐",
+    "discoverDoubanMovie": "豆瓣电影",
+    "discoverDoubanTv": "豆瓣剧集",
+    "discoverTMDBMovie": "TMDB电影",
+    "discoverTMDBTv": "TMDB剧集",
+    "discoverBangumi": "BANGUMI",
+
+    "subscribe": "订阅",
+    "subscribeMovie": "电影",
+    "subscribeTv": "剧集",
+    "subscribeCustom": "自定义",
+
+    "download": "下载",
+    "downloadDownloading": "正在下载",
+    "downloadDownloaded": "最近下载",
+    "downloadHistory": "历史记录",
+
+    "site": "站点",
+    "siteManagement": "站点管理",
+    "siteStatistics": "数据统计",
+    "siteBrushtask": "刷流任务",
+    "siteResources": "站点资源",
+
+    "plugins": "插件",
+    "pluginsInstalled": "已安装",
+    "pluginsNotInstall": "未安装",
+
+    "settings": "设置",
+    "settingsBasic": "基础",
+    "settingsLibrary": "媒体库",
+
+    "auth": "认证",
+    "authLogin": "登陆",
+    "authUsers": "用户"
+  },
+  "Auth": {
+    "title": "LOGIN MOVIEPILOT",
+
+    "login": "登陆",
+    "logging": "登陆中 ...",
+
+    "username": "用户名",
+    "password": "密码",
+
+    "usernameError": "用户名为必填项",
+    "passwordError": "密码为必填项",
+
+    "errorLogin": "登陆失败: ",
+    "error401": "用户名或密码错误",
+    "error403": "用户未启用",
+    "error500": "服务器错误",
+    "errorAccessTokenNotFound": "未获取访问令牌",
+    "errorFailedToFetch": "请求登陆失败"
+  },
+  "NotFoundPage": {
+    "title": "404 页面哪去了",
+    "description": "哎呀！看起来你来到了一个神秘的地方。不要慌，点击下面的按钮回家～",
+    "backHome": "回家吧骚年"
+  },
+
+  "HomePage": {
+    "welcome": "欢迎"
+  },
+  "Counter": {
+    "increment": "增加",
+    "decrement": "递减"
+  },
+  "Menu": {
+    "dashboard": "仪表板"
+  }
+}

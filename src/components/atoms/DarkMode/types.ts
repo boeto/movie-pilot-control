@@ -1,4 +1,3 @@
-export enum ModeName {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+import { ComponentProps } from 'react';
+
+export interface DarkModeToggleProps extends ComponentProps<'button'> {}

@@ -1,27 +1,40 @@
-import type { SidebarProps as FlowbiteSidebarComponentProps } from '@/components/flowbite-react';
 import type {
-  SidebarItemProps as FlowbiteSidebarItemProps,
   SidebarCollapseProps as FlowbiteSidebarsCollapseProps,
   SidebarCTAProps as FlowbiteSidebarsCTAProps,
+  SidebarItemProps as FlowbiteSidebarItemProps,
   SidebarLogoProps as FlowbiteSidebarsLogoProps,
 } from 'flowbite-react/lib/esm/components/Sidebar';
-import type { SidebarItemsProps as FlowbiteSidebarsItemsProps } from 'flowbite-react/lib/esm/components/Sidebar/SidebarItems';
 import type { SidebarItemGroupProps as FlowbiteSidebarsItemGroupProps } from 'flowbite-react/lib/esm/components/Sidebar/SidebarItemGroup';
+import type { SidebarItemsProps as FlowbiteSidebarsItemsProps } from 'flowbite-react/lib/esm/components/Sidebar/SidebarItems';
 
-export interface SidebarComponentProps
+import type { SidebarProps as FlowbiteSidebarComponentProps } from '@/components/flowbite-react';
+
+interface SidebarComponentProps
   extends Omit<FlowbiteSidebarComponentProps, 'theme'> {}
 
-export interface SidebarItemProps
-  extends Omit<FlowbiteSidebarItemProps, 'theme'> {}
+interface SidebarItemProps extends Omit<FlowbiteSidebarItemProps, 'theme'> {
+  isHidden?: boolean;
+}
 
-export interface SidebarItemsProps extends FlowbiteSidebarsItemsProps {}
+interface SidebarItemsProps extends FlowbiteSidebarsItemsProps {}
 
-export interface SidebarItemGroupProps extends FlowbiteSidebarsItemGroupProps {}
+interface SidebarItemGroupProps extends FlowbiteSidebarsItemGroupProps {}
 
-export interface SidebarCollapseProps
-  extends Omit<FlowbiteSidebarsCollapseProps, 'theme'> {}
+interface SidebarCollapseProps
+  extends Omit<FlowbiteSidebarsCollapseProps, 'theme'> {
+  isHidden?: boolean;
+}
 
-export interface SidebarCTAProps
-  extends Omit<FlowbiteSidebarsCTAProps, 'theme'> {}
+interface SidebarCTAProps extends Omit<FlowbiteSidebarsCTAProps, 'theme'> {}
 
-export interface SidebarLogoProps extends FlowbiteSidebarsLogoProps {}
+interface SidebarLogoProps extends FlowbiteSidebarsLogoProps {}
+
+export type {
+  SidebarCollapseProps,
+  SidebarComponentProps,
+  SidebarCTAProps,
+  SidebarItemGroupProps,
+  SidebarItemProps,
+  SidebarItemsProps,
+  SidebarLogoProps,
+};

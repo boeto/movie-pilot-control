@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import type { DropdownComponentProps } from './types';
+
 import { Dropdown as FlowbiteDropdown } from '@/components/flowbite-react';
-import { dropdownCustomTheme } from './theme';
-import { DropdownItem } from './DropdownItem';
-import { DropdownHeader } from './DropdownHeader';
+
 import { DropdownDivider } from './DropdownDivider';
+import { DropdownHeader } from './DropdownHeader';
+import { DropdownItem } from './DropdownItem';
+import { dropdownCustomTheme } from './theme';
+import type { DropdownComponentProps } from './types';
 
 const DropdownComponent: FC<DropdownComponentProps> = ({
   children,

@@ -8,6 +8,7 @@
       "request": "launch",
       "type": "node-terminal"
       // "skipFiles": ["<node_modules>/**"]
+      // "skipFiles": ["node_modules/.pnpm"]
     },
     {
       "name": "Launch Chrome",
@@ -16,6 +17,7 @@
       "url": "http://localhost:3002",
       "webRoot": "${workspaceFolder}"
       // "skipFiles": ["<node_modules>/**"]
+      // "skipFiles": ["node_modules/.pnpm"]
     }
   ],
 

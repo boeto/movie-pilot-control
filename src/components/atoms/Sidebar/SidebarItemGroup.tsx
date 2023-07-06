@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import { SidebarItemGroupProps } from './types';
+
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
+
+import { SidebarItemGroupProps } from './types';
 
 const SidebarItemGroup: FC<SidebarItemGroupProps> = ({
   children,

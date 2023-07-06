@@ -1,11 +1,21 @@
 import { FC } from 'react';
-import type { LabelProps } from './types';
-import { Label as FlowbiteLabel } from '@/components/flowbite-react';
-import { labelCustomTheme } from './theme';
 
-const Label: FC<LabelProps> = ({ children, ...props }) => {
+import { Label as FlowbiteLabel } from '@/components/flowbite-react';
+
+import { getLabelCustomTheme } from './theme';
+import type { LabelProps } from './types';
+
+const Label: FC<LabelProps> = ({ children, isRequire = false, ...props }) => {
+  // let labelCustomThemeMerged = labelCustomTheme;
+  // if (isRequire) {
+  //   labelCustomThemeMerged = labelCustomTheme
+  //     ? labelCustomThemeRequire &&
+  //       mergeDeep(labelCustomTheme, labelCustomThemeRequire)
+  //     : labelCustomThemeRequire;
+  // }
+
   return (
-    <FlowbiteLabel theme={labelCustomTheme} {...props}>
+    <FlowbiteLabel theme={getLabelCustomTheme({ isRequire })} {...props}>
       {children}
     </FlowbiteLabel>
   );

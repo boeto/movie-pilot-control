@@ -1,0 +1,13 @@
+services:
+  movie-pilot-control:
+    container_name: movie-pilot-control-local
+    image: movie-pilot-control:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3002:3002
+
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:3001 # optional

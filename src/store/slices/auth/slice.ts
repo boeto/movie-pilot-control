@@ -1,6 +1,9 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { setAuthLoginAsync } from './thunk';
 import { AuthSliceState } from './types';
-import { authLoginAsync } from './thunks';
+
+import type { ReduxState } from '../../reducer';
 
 const initialState: AuthSliceState = {
   accessToken: '',
@@ -9,31 +12,43 @@ const initialState: AuthSliceState = {
   actionError: undefined,
 };
 
-export const authSlice = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    resetActionError: (state) => {
+      state.actionError = undefined;
+    },
+    setActionError: (state, action: PayloadAction<string | undefined>) => {
+      state.actionError = action.payload;
+    },
     setIsLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
+    },
+    setIsLogin: (state, action: PayloadAction<boolean>) => {
+      state.isLogin = action.payload;
+    },
+    setAccessToken: (state, action: PayloadAction<string>) => {
+      state.accessToken = action.payload;
     },
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(authLoginAsync.pending, (state) => {
+      .addCase(setAuthLoginAsync.pending, (state) => {
         state.accessToken = '';
         state.isLogin = false;
         state.isLoading = true;
         state.actionError = undefined;
       })
-      .addCase(authLoginAsync.rejected, (state, action) => {
+      .addCase(setAuthLoginAsync.rejected, (state, action) => {
         state.accessToken = '';
         state.isLogin = false;
         state.isLoading = false;
         state.actionError = action.payload;
         // state.actionError = action.error.message;
       })
-      .addCase(authLoginAsync.fulfilled, (state, action) => {
+      .addCase(setAuthLoginAsync.fulfilled, (state, action) => {
         state.accessToken = action.payload;
         state.isLogin = true;
         state.isLoading = false;
@@ -42,4 +57,28 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setIsLoading } = authSlice.actions;
+// reducer
+const authReducer = authSlice.reducer;
+
+// state
+const selectAuth = (state: ReduxState) => state.auth;
+
+// action
+const {
+  resetActionError,
+  setActionError,
+  setIsLoading,
+  setIsLogin,
+  setAccessToken,
+} = authSlice.actions;
+
+export {
+  authReducer,
+  resetActionError,
+  selectAuth,
+  setAccessToken,
+  setActionError,
+  setAuthLoginAsync,
+  setIsLoading,
+  setIsLogin,
+};

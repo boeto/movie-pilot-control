@@ -1,12 +1,15 @@
-export enum HeadersKeys {
+enum HeadersKeys {
   CONTENT_TYPE = 'Content-Type',
 }
-export enum HeadersContentType {
+enum HeadersContentType {
   URLENCODED = 'application/x-www-form-urlencoded',
+  JSON = 'application/json',
 }
-export enum FetchMethod {
+enum FetchMethod {
   POST = 'POST',
   GET = 'GET',
   PUT = 'PUT',
   DELETE = 'DELETE',
 }
+
+export { FetchMethod, HeadersContentType, HeadersKeys };

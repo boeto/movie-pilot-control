@@ -1,14 +1,17 @@
-export enum SliceStatusName {
+enum SliceStatusName {
   IDLE = 'idle',
   LOADING = 'loading',
   FAILED = 'failed',
 }
-export type SliceLoginStatus =
+type SliceLoginStatus =
   | SliceStatusName.IDLE
   | SliceStatusName.LOADING
   | SliceStatusName.FAILED;
 
-export interface CounterSliceState {
+interface CounterSliceState {
   value: number;
   status: SliceLoginStatus;
 }
+
+export type { CounterSliceState, SliceLoginStatus };
+export { SliceStatusName };

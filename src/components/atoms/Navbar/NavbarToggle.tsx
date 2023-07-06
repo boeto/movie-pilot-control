@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import { NavbarToggleProps } from './types';
-import { Navbar as Navbar } from '@/components/flowbite-react';
+
+import { Navbar } from '@/components/flowbite-react';
+
 import { navbarCustomTheme } from './theme';
+import { NavbarToggleProps } from './types';
 
 const NavbarToggle: FC<NavbarToggleProps> = ({ children, ...props }) => {
   return (

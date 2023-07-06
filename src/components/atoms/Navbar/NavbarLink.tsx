@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import { NavbarLinkProps } from './types';
-import { Navbar as Navbar } from '@/components/flowbite-react';
+
+import { Navbar } from '@/components/flowbite-react';
+
 import { navbarCustomTheme } from './theme';
+import { NavbarLinkProps } from './types';
 
 const NavbarLink: FC<NavbarLinkProps> = ({ children, ...props }) => {
   return (

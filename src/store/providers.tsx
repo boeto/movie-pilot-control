@@ -1,4 +1,5 @@
 'use client';
+
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -23,12 +24,12 @@ const PersistorProvider = ({ children }: React.PropsWithChildren) => {
   );
 };
 
-const Providers = ({ children }: React.PropsWithChildren) => (
+const StoreProviders = ({ children }: React.PropsWithChildren) => (
   <StoreProvider>
     <PersistorProvider>{children}</PersistorProvider>
   </StoreProvider>
 );
 
-Providers.displayName = 'Providers';
+StoreProviders.displayName = 'Providers';
 
-export { Providers };
+export { StoreProviders };

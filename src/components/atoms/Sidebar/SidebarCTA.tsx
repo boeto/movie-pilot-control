@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import { SidebarCTAProps } from './types';
+
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
+
 import { sidebarCustomTheme } from './theme';
+import { SidebarCTAProps } from './types';
 
 const SidebarCTA: FC<SidebarCTAProps> = ({ children, ...props }) => {
   return (

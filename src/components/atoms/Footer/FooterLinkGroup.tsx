@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import type { FooterLinkGroupProps } from './types';
+
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
+
 import { footerCustomTheme } from './theme';
+import type { FooterLinkGroupProps } from './types';
 
 const FooterLinkGroup: FC<FooterLinkGroupProps> = ({ children, ...props }) => {
   return (
