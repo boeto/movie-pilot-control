@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import type { TooltipProps } from './types';
+
 import { Tooltip as FlowbiteTooltip } from '@/components/flowbite-react';
+
 import { tooltipCustomTheme } from './theme';
+import type { TooltipProps } from './types';
 
 const Tooltip: FC<TooltipProps> = ({ children, ...props }) => {
   return (

@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import type { FooterDividerProps } from './types';
+
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
+
 import { footerCustomTheme } from './theme';
+import type { FooterDividerProps } from './types';
 
 const FooterDivider: FC<FooterDividerProps> = ({ children, ...props }) => {
   return (

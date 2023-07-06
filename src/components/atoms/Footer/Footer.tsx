@@ -1,14 +1,16 @@
 import { FC } from 'react';
-import type { FooterProps } from './types';
+
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
-import { footerCustomTheme } from './theme';
+
+import { FooterBrand } from './FooterBrand';
+import { FooterCopyright } from './FooterCopyright';
+import { FooterDivider } from './FooterDivider';
+import { FooterIcon } from './FooterIcon';
 import { FooterLink } from './FooterLink';
 import { FooterLinkGroup } from './FooterLinkGroup';
-import { FooterDivider } from './FooterDivider';
-import { FooterBrand } from './FooterBrand';
-import { FooterIcon } from './FooterIcon';
-import { FooterCopyright } from './FooterCopyright';
 import { FooterTitle } from './FooterTitle';
+import { footerCustomTheme } from './theme';
+import type { FooterProps } from './types';
 
 const FooterComponent: FC<FooterProps> = ({ children, ...props }) => {
   return (

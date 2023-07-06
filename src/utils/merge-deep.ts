@@ -3,13 +3,13 @@
  * @param item
  * @returns boolean
  */
-function isObject(item: unknown): item is Record<string, unknown> {
+const isObject = (item: unknown): item is Record<string, unknown> => {
   return (
     item !== null && typeof item === 'object' && item.constructor === Object
   );
-}
+};
 
-function cloneDeep<T>(source: T) {
+const cloneDeep = <T>(source: T) => {
   if (!isObject(source)) {
     return source;
   }
@@ -21,7 +21,7 @@ function cloneDeep<T>(source: T) {
   });
 
   return output;
-}
+};
 
 /**
  * Merge and deep copy the values of all of the enumerable own properties of target object from source object to a new object
@@ -29,10 +29,10 @@ function cloneDeep<T>(source: T) {
  * @param source The source object from which to copy properties.
  * @return A new merged and deep copied object.
  */
-export function mergeDeep<T extends object, S extends object>(
+export const mergeDeep = <T extends object, S extends object>(
   target: T,
   source: S,
-): T & S {
+): T & S => {
   if (isObject(source) && Object.keys(source).length === 0) {
     return cloneDeep({ ...target, ...source });
   }
@@ -55,4 +55,4 @@ export function mergeDeep<T extends object, S extends object>(
   }
 
   return output;
-}
+};

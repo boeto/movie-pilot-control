@@ -1,7 +1,8 @@
-import { AuthLoginInfo } from '@/store';
+import { AuthLoginInfo } from '@/common';
+
+import { fetchBackend } from './shared';
+
 import { FetchMethod, HeadersContentType, HeadersKeys } from '../types';
-import { getBackendUrl } from '@/utils';
-import { fetchBackend } from './backend';
 
 export const postLogin = async (authLoginInfo: AuthLoginInfo) => {
   const formData = new URLSearchParams();
@@ -21,25 +22,15 @@ export const postLogin = async (authLoginInfo: AuthLoginInfo) => {
     const result = await res.json();
 
     if (!res.ok) {
-      switch (res.status) {
-        case 401:
-          throw new Error('登录失败: 用户名/密码不正确');
-        case 403:
-          throw new Error('登录失败: 用户未启用');
-        case 500:
-          throw new Error('登录失败: 服务器错误');
-
-        default:
-          throw new Error(`登录失败: ${res.status}`);
-      }
+      throw new Error(JSON.stringify(res.status));
     }
 
-    const { access_token } = result;
-    if (!access_token) {
-      throw new Error('accessToken not found');
+    const accessToken = result.access_token;
+    if (!accessToken) {
+      throw new Error('errorAccessTokenNotFound');
     }
-    return access_token;
+    return accessToken as string;
   } catch (error: any) {
-    throw new Error(error['message']);
+    throw new Error(error.message);
   }
 };

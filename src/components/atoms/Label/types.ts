@@ -1,2 +1,11 @@
 import type { LabelProps as FlowbiteLabelProps } from '@/components/flowbite-react';
-export interface LabelProps extends Omit<FlowbiteLabelProps, 'theme'> {}
+
+interface LabelCustomThemeProps {
+  isRequire?: boolean;
+}
+
+interface LabelProps
+  extends Omit<FlowbiteLabelProps, 'theme'>,
+    LabelCustomThemeProps {}
+
+export type { LabelCustomThemeProps, LabelProps };

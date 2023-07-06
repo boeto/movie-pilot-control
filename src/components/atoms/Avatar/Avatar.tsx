@@ -1,9 +1,11 @@
 import { FC } from 'react';
-import type { AvatarProps } from './types';
+
 import { Avatar as FlowbiteAvatar } from '@/components/flowbite-react';
-import { avatarCustomTheme } from './theme';
-import { AvatarGroupCounter } from './AvatarGroupCounter';
+
 import { AvatarGroup } from './AvatarGroup';
+import { AvatarGroupCounter } from './AvatarGroupCounter';
+import { avatarCustomTheme } from './theme';
+import type { AvatarProps } from './types';
 
 const AvatarComponent: FC<AvatarProps> = ({ children, ...props }) => {
   return (

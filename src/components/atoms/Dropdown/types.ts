@@ -1,15 +1,22 @@
 import { ComponentProps, PropsWithChildren } from 'react';
+
 import type {
-  DropdownProps as FlowbiteDropdownComponentProps,
   DropdownItemProps as FlowbiteDropdownItemProps,
+  DropdownProps as FlowbiteDropdownComponentProps,
 } from '@/components/flowbite-react';
 
-export interface DropdownComponentProps
+interface DropdownComponentProps
   extends Omit<FlowbiteDropdownComponentProps, 'theme'> {}
 
-export interface DropdownItemProps
-  extends Omit<FlowbiteDropdownItemProps, 'theme'> {}
+interface DropdownItemProps extends Omit<FlowbiteDropdownItemProps, 'theme'> {}
 
-export type DropdownDividerProps = ComponentProps<'div'>;
+type DropdownDividerProps = ComponentProps<'div'>;
 
-export type DropdownHeaderProps = PropsWithChildren & DropdownDividerProps;
+type DropdownHeaderProps = PropsWithChildren & DropdownDividerProps;
+
+export type {
+  DropdownComponentProps,
+  DropdownDividerProps,
+  DropdownHeaderProps,
+  DropdownItemProps,
+};

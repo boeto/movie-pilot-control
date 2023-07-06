@@ -1,16 +1,21 @@
 'use client';
-import { configureStore } from '@reduxjs/toolkit';
-import {
-  useSelector as useReduxSelector,
-  useDispatch as useReduxDispatch,
-  type TypedUseSelectorHook,
-} from 'react-redux';
 
-import { persistedReducer, rootReducerWithResetAll } from './reducer';
-import { middleware } from './middleware';
+import type { TypedUseSelectorHook } from 'react-redux';
+import {
+  useDispatch as useReduxDispatch,
+  useSelector as useReduxSelector,
+} from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import { persistStore } from 'redux-persist';
+
 import { isClient } from '@/utils';
-import { ReduxDispatch, ReduxReducer, ReduxState } from './types';
+
+import {
+  persistedReducer,
+  ReduxReducer,
+  ReduxState,
+  rootReducerWithResetAll,
+} from './reducer';
 
 const makeReduxStoreConfig = (reduxReducer: ReduxReducer) =>
   configureStore({
@@ -19,22 +24,22 @@ const makeReduxStoreConfig = (reduxReducer: ReduxReducer) =>
     middleware: (getDefaultMiddleware) => {
       return getDefaultMiddleware({
         serializableCheck: false,
-      }).concat(middleware);
+      }).concat();
     },
   });
 
-export const makeReduxStore = () => {
+const makeReduxStore = () => {
   if (!isClient()) {
     return { reduxStore: makeReduxStoreConfig(rootReducerWithResetAll) };
-  } else {
-    const reduxStore = makeReduxStoreConfig(
-      persistedReducer as unknown as ReduxReducer,
-    );
-
-    const persistor = persistStore(reduxStore);
-
-    return { reduxStore, persistor };
   }
+
+  const reduxStore = makeReduxStoreConfig(
+    persistedReducer as unknown as ReduxReducer,
+  );
+
+  const persistor = persistStore(reduxStore);
+
+  return { reduxStore, persistor };
 };
 
 const { reduxStore, persistor } = makeReduxStore();
@@ -42,4 +47,8 @@ const { reduxStore, persistor } = makeReduxStore();
 const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
 
-export { reduxStore, useDispatch, useSelector, persistor };
+type ReduxStore = typeof reduxStore;
+type ReduxDispatch = typeof reduxStore.dispatch;
+
+export { makeReduxStore, persistor, reduxStore, useDispatch, useSelector };
+export type { ReduxDispatch, ReduxStore };

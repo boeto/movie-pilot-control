@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import type { FooterTitleProps } from './types';
+
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
+
 import { footerCustomTheme } from './theme';
+import type { FooterTitleProps } from './types';
 
 const FooterTitle: FC<FooterTitleProps> = ({ children, ...props }) => {
   return (

@@ -1,10 +1,18 @@
 import { FC } from 'react';
-import { SidebarCollapseProps } from './types';
-import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
-import { sidebarCustomTheme } from './theme';
 
-const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, ...props }) => {
-  return (
+import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
+
+import { sidebarCustomTheme } from './theme';
+import { SidebarCollapseProps } from './types';
+
+const SidebarCollapse: FC<SidebarCollapseProps> = ({
+  children,
+  isHidden = false,
+  ...props
+}) => {
+  return isHidden ? (
+    <></>
+  ) : (
     <FlowbiteSidebar.Collapse theme={sidebarCustomTheme?.collapse} {...props}>
       {children}
     </FlowbiteSidebar.Collapse>

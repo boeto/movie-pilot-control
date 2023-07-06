@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import type { FooterBrandProps } from './types';
+
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
+
 import { footerCustomTheme } from './theme';
+import type { FooterBrandProps } from './types';
 
 const FooterBrand: FC<FooterBrandProps> = ({ children, ...props }) => {
   return (

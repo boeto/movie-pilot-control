@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+__ENV.js
 
 # vercel
 .vercel
@@ -39,3 +40,4 @@ flowbite-theme-default.ts
 
 # log
 /.log
+/log

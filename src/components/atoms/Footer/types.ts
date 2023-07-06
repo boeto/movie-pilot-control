@@ -1,35 +1,41 @@
+import type { FooterDividerProps as FlowbiteFooterDividerProps } from 'flowbite-react/lib/esm/components/Footer/FooterDivider';
+
 import type {
-  FooterProps as FlowbiteFooterComponentProps,
-  FooterLinkProps as FlowbiteFooterLinkProps,
-  FooterLinkGroupProps as FlowbiteFooterLinkGroupProps,
   FooterBrandProps as FlowbiteFooterBrandProps,
-  FooterIconProps as FlowbiteFooterIconProps,
   FooterCopyrightProps as FlowbiteFooterCopyrightProps,
+  FooterIconProps as FlowbiteFooterIconProps,
+  FooterLinkGroupProps as FlowbiteFooterLinkGroupProps,
+  FooterLinkProps as FlowbiteFooterLinkProps,
+  FooterProps as FlowbiteFooterComponentProps,
   FooterTitleProps as FlowbiteFooterTitleProps,
 } from '@/components/flowbite-react';
 
-import type { FooterDividerProps as FlowbiteFooterDividerProps } from 'flowbite-react/lib/esm/components/Footer/FooterDivider';
+interface FooterProps extends Omit<FlowbiteFooterComponentProps, 'theme'> {}
 
-export interface FooterProps
-  extends Omit<FlowbiteFooterComponentProps, 'theme'> {}
+interface FooterLinkProps extends Omit<FlowbiteFooterLinkProps, 'theme'> {}
 
-export interface FooterLinkProps
-  extends Omit<FlowbiteFooterLinkProps, 'theme'> {}
-
-export interface FooterLinkGroupProps
+interface FooterLinkGroupProps
   extends Omit<FlowbiteFooterLinkGroupProps, 'theme'> {}
 
-export interface FooterBrandProps
-  extends Omit<FlowbiteFooterBrandProps, 'theme'> {}
+interface FooterBrandProps extends Omit<FlowbiteFooterBrandProps, 'theme'> {}
 
-export interface FooterIconProps
-  extends Omit<FlowbiteFooterIconProps, 'theme'> {}
+interface FooterIconProps extends Omit<FlowbiteFooterIconProps, 'theme'> {}
 
-export interface FooterDividerProps
+interface FooterDividerProps
   extends Omit<FlowbiteFooterDividerProps, 'theme'> {}
 
-export interface FooterTitleProps
-  extends Omit<FlowbiteFooterTitleProps, 'theme'> {}
+interface FooterTitleProps extends Omit<FlowbiteFooterTitleProps, 'theme'> {}
 
-export interface FooterCopyrightProps
+interface FooterCopyrightProps
   extends Omit<FlowbiteFooterCopyrightProps, 'theme'> {}
+
+export type {
+  FooterBrandProps,
+  FooterCopyrightProps,
+  FooterDividerProps,
+  FooterIconProps,
+  FooterLinkGroupProps,
+  FooterLinkProps,
+  FooterProps,
+  FooterTitleProps,
+};

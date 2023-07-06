@@ -1,18 +1,18 @@
 'use client';
 
+import { FC } from 'react';
+import { useTranslations } from 'next-intl';
+
 import { selectAuth, useSelector } from '@/store';
 
-function ShowAuthInfo() {
-  const {
-    isLoading,
-    isLogin,
-    accessToken: accessToken,
-  } = useSelector(selectAuth);
+const ShowAuthInfo: FC = () => {
+  const t = useTranslations('HomePage');
+  const { isLoading, isLogin, accessToken } = useSelector(selectAuth);
   return (
-    <p className="text-gray-500 text-center text-sm">
+    <p className="text-center text-sm text-gray-500">
       isLoading: 【{String(isLoading)}】- isLogin: 【{String(isLogin)}】-
-      accessToken: 【{accessToken.slice(0, 6)}】
+      accessToken: 【{accessToken.slice(0, 6)}】{t('welcome')}
     </p>
   );
-}
+};
 export { ShowAuthInfo };

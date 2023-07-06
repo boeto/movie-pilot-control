@@ -1,16 +1,11 @@
-import { theme } from '@/components/flowbite-react';
-import { type ComponentProps, type FC } from 'react';
+import type { FC } from 'react';
 import { HiMoon, HiSun } from 'react-icons/hi';
-import { ModeName } from './types';
 import { twMerge } from 'tailwind-merge';
 
-declare global {
-  interface Window {
-    __setPreferredMode: (mode: string) => void;
-  }
-}
+import { theme } from '@/components/flowbite-react';
+import { ModeName, setWithSaveMode } from '@/utils';
 
-interface DarkModeToggleProps extends ComponentProps<'button'> {}
+import { DarkModeToggleProps } from './types';
 
 export const DarkModeToggle: FC<DarkModeToggleProps> = ({
   className,
@@ -27,7 +22,7 @@ export const DarkModeToggle: FC<DarkModeToggleProps> = ({
       )} hidden dark:block`}
       {...props}
       onClick={() => {
-        window.__setPreferredMode(ModeName.LIGHT);
+        setWithSaveMode(ModeName.LIGHT);
       }}
     >
       <HiSun aria-label="Currently dark mode" className="h-6 w-6" />
@@ -37,7 +32,7 @@ export const DarkModeToggle: FC<DarkModeToggleProps> = ({
       data-testid="dark-mode-toggle"
       type="button"
       onClick={() => {
-        window.__setPreferredMode(ModeName.DARK);
+        setWithSaveMode(ModeName.DARK);
       }}
       className={`${twMerge(
         theme.darkThemeToggle.root.base,

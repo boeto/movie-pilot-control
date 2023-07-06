@@ -1,67 +1,68 @@
 'use client';
-import { useState } from 'react';
-import {
-  counterSlice,
-  useSelector,
-  useDispatch,
-  selectCount,
-  incrementAsync,
-  incrementIfOddAsync,
-} from '@/store';
-import { Button } from '@/components';
-import { isClient } from '@/utils';
 
-export const Counter2 = () => {
+import { useState } from 'react';
+
+import { Button } from '@/components/atoms/Button';
+import {
+  selectCount,
+  setDecrement,
+  setIncrement,
+  setIncrementAsync,
+  setIncrementByAmount,
+  setIncrementIfOddAsync,
+  useDispatch,
+  useSelector,
+} from '@/store';
+
+export const Counter = () => {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
 
   const [incrementAmount, setIncrementAmount] = useState(2);
 
   return (
-    <div className="m-5">
+    <div className="m-5 flex flex-col items-center">
       <div className="flex items-center justify-center">
         <Button
-          className="button mr-4"
+          className="mr-4"
           aria-label="Decrement value"
-          onClick={() => dispatch(counterSlice.actions.decrement())}
+          onClick={() => dispatch(setDecrement())}
         >
           -
         </Button>
         <span className="text-gray-900 dark:text-gray-100">{count}</span>
         <Button
-          className="button ml-4"
+          className="ml-4"
           aria-label="Increment value"
-          onClick={() => dispatch(counterSlice.actions.increment())}
+          onClick={() => dispatch(setIncrement())}
         >
           +
         </Button>
       </div>
-      <div className="flex items-center mt-4">
+      <div className="mt-4 flex items-center">
         <input
-          className="w-12 h-10 border-blue-500 border-2 rounded-md text-center text-gray-900 dark:bg-gray-800 dark:text-gray-100"
+          className="h-10 w-12 rounded-md border-2 border-blue-500 text-center text-gray-900 dark:bg-gray-800 dark:text-gray-100"
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value ?? 0))}
         />
 
         <Button
-          className="button ml-4"
+          className="ml-4"
           color="primary"
-          onClick={() =>
-            dispatch(counterSlice.actions.incrementByAmount(incrementAmount))
-          }
+          onClick={() => dispatch(setIncrementByAmount(incrementAmount))}
         >
           Add Amount
         </Button>
         <Button
           className="asyncButton ml-4"
-          onClick={() => dispatch(incrementAsync(incrementAmount))}
+          onClick={() => dispatch(setIncrementAsync(incrementAmount))}
         >
           Add Async
         </Button>
         <Button
-          className="button ml-4"
-          onClick={() => dispatch(incrementIfOddAsync(incrementAmount))}
+          className="ml-4"
+          onClick={() => dispatch(setIncrementIfOddAsync(incrementAmount))}
         >
           Add If Odd
         </Button>

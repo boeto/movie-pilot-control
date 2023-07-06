@@ -1,0 +1,78 @@
+{
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "search": "Search",
+
+    "discover": "Discover",
+    "discoverRanking": "Ranking",
+    "discoverDoubanMovie": "Douban Movie",
+    "discoverDoubanTv": "Douban TV",
+    "discoverTMDBMovie": "TMDB Movie",
+    "discoverTMDBTv": "TMDB TV",
+    "discoverBangumi": "BANGUMI",
+
+    "subscribe": "Subscribe",
+    "subscribeMovie": "Movie",
+    "subscribeTv": "TV",
+    "subscribeCustom": "Custom",
+
+    "download": "Download",
+    "downloadDownloading": "Downloading",
+    "downloadDownloaded": "Downloaded",
+    "downloadHistory": "History",
+
+    "site": "Site",
+    "siteManagement": "Management",
+    "siteStatistics": "Statistics",
+    "siteBrushtask": "Brushtask",
+    "siteResources": "Resources",
+
+    "plugins": "Plugins",
+    "pluginsInstalled": "Installed",
+    "pluginsNotInstall": "Not Install",
+
+    "settings": "Settings",
+    "settingsBasic": "Basic",
+    "settingsLibrary": "Library",
+
+    "auth": "Auth",
+    "authLogin": "Login",
+    "authUsers": "Users"
+  },
+  "Auth": {
+    "title": "LOGIN MOVIEPILOT",
+
+    "login": "Login",
+    "logging": "Logging in ...",
+
+    "username": "Username",
+    "password": "Password",
+
+    "usernameError": "Username is required",
+    "passwordError": "Password is required",
+
+    "errorLogin": "Login failed: ",
+    "error401": "Incorrect username or password",
+    "error403": "User is not enabled",
+    "error500": "Server error",
+    "errorAccessTokenNotFound": "Access token not found",
+    "errorFailedToFetch": "Failed to fetch request"
+  },
+
+  "NotFoundPage": {
+    "title": "404 Page not found",
+    "description": "Oops! Looks like you followed a bad link.Don't panic, click the button below to go back home.",
+    "backHome": "Go Back Home"
+  },
+
+  "HomePage": {
+    "welcome": "Welcome"
+  },
+  "Counter": {
+    "increment": "Increment",
+    "decrement": "Decrement"
+  },
+  "Menu": {
+    "dashboard": "Dashboard"
+  }
+}

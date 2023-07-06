@@ -2,8 +2,9 @@ import { FC } from 'react';
 
 export const DarkModeScript: FC = () => (
   <script
+    // eslint-disable-next-line react/no-danger
     dangerouslySetInnerHTML={{
-      __html: `
+      __html: /* html */ `
             (function () {
               function setMode(newMode) {
                 window.__mode = newMode;

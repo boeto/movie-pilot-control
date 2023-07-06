@@ -1,10 +1,12 @@
 'use client';
 
 import { FC } from 'react';
-import type { ButtonProps } from './types';
+
 import { Button as FlowbiteButton } from '@/components/flowbite-react';
-import { buttonCustomTheme } from './theme';
+
 import { ButtonGroup } from './ButtonGroup';
+import { buttonCustomTheme } from './theme';
+import type { ButtonProps } from './types';
 
 const ButtonComponent: FC<ButtonProps> = ({
   children,

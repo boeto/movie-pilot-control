@@ -1,47 +1,54 @@
 # Movie Pilot Control
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a front-end project for [Movie Pilot](https://github.com/jxxghp/MoviePilot), developed using [Next.js](https://nextjs.org/) and [Flowbite React](https://www.flowbite-react.com/).
 
-## Getting Started
+## To run and view the project locally using Docker
 
-1 使用 Corepack 安装 pnpm，更多方法请查看 <https://pnpm.io/zh/installation>
+```bash
+# docker-compose:
+docker-compose -f docker-compose.local.yml up -d --build
+
+# or docker:
+docker build -t movie-pilot-control:local . &&
+    docker run -d --name movie-pilot-control-local \
+        -p 3002:3002 \
+        -e NEXT_PUBLIC_BACKEND_URL=http://localhost:3001 \
+        movie-pilot-control:local
+
+```
+
+## Steps to start development
+
+1 Use Corepack to install pnpm. For more methods, please refer to [pnpm](https://pnpm.io/installation)
 
 ```bash
 corepack enable
 corepack prepare pnpm@latest --activate
 ```
 
-2 初始化依赖
+2 Initialize the dependencies
 
 ```bash
-pnpm install --frozen-lockfile
+pnpm run ci
 ```
 
-3 运行开发模式:
+3 To run in development mode
 
 ```bash
 pnpm run dev
 ```
 
-4 打开浏览器查看：[http://localhost:3002](http://localhost:3002)
+4 To open your project in a browser for viewing：[http://localhost:3002](http://localhost:3002)
 
 ---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [MoviePilot](https://github.com/jxxghp/MoviePilot) - To view the backend project and its APIs
+- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js GitHub repository](https://github.com/vercel/next.js/)
+- [Flowbite React Documentation](https://www.flowbite-react.com/docs/getting-started/introduction)
+- [Flowbite React GitHub repository](https://github.com/themesberg/flowbite-react)

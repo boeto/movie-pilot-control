@@ -1,5 +1,23 @@
-import { CustomFlowbiteTheme } from 'flowbite-react';
+'use client';
 
-const cardCustomTheme: CustomFlowbiteTheme['card'] = {};
+import { twMerge } from 'tailwind-merge';
 
-export { cardCustomTheme };
+import { CustomFlowbiteTheme, theme } from '@/components/flowbite-react';
+
+import { CardCustomThemeProps } from './types';
+
+const cardDefaultTheme = theme.card;
+
+const getCardCustomTheme = (
+  props: CardCustomThemeProps,
+): CustomFlowbiteTheme['card'] => {
+  const cardCustomTheme = {
+    root: {
+      children: twMerge(theme.card.root.children, props.childrenClassName),
+    },
+  };
+
+  return cardCustomTheme;
+};
+
+export { cardDefaultTheme, getCardCustomTheme };

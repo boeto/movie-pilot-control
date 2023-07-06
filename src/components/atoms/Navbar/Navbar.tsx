@@ -1,11 +1,13 @@
-import type { NavbarComponentProps } from './types';
 import { FC } from 'react';
+
 import { Navbar as FlowbiteNavbar } from '@/components/flowbite-react';
-import { navbarCustomTheme } from './theme';
+
 import { NavbarBrand } from './NavbarBrand';
 import { NavbarCollapse } from './NavbarCollapse';
 import { NavbarLink } from './NavbarLink';
 import { NavbarToggle } from './NavbarToggle';
+import { navbarCustomTheme } from './theme';
+import type { NavbarComponentProps } from './types';
 
 const NavbarComponent: FC<NavbarComponentProps> = ({ children, ...props }) => {
   return (

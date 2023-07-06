@@ -1,20 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import type { UiSliceState } from './types';
-import { ModeName } from '@/components/atoms/DarkMode/types';
+
+import type { ReduxState } from '../../reducer';
+
 const initialState: UiSliceState = {
-  mode: ModeName.LIGHT,
+  isSidebarOpen: false,
 };
 
-export const uiSlice = createSlice({
+const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    setModeState: (state, action: PayloadAction<ModeName>) => {
-      state.mode = action.payload;
+    setIsSidebarOpen: (state, action: PayloadAction<boolean>) => {
+      state.isSidebarOpen = action.payload;
     },
   },
 });
 
-export const { setModeState } = uiSlice.actions;
+// reducer
+const uiReducer = uiSlice.reducer;
+
+// state
+const selectUi = (state: ReduxState) => state.ui;
+
+const { setIsSidebarOpen } = uiSlice.actions;
+
+export { selectUi, setIsSidebarOpen, uiReducer };

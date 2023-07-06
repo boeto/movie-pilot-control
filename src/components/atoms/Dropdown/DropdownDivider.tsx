@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import type { DropdownDividerProps } from './types';
+
 import { Dropdown as FlowbiteDropdown } from '@/components/flowbite-react';
+
+import type { DropdownDividerProps } from './types';
 
 const DropdownDivider: FC<DropdownDividerProps> = ({ children, ...props }) => {
   return (

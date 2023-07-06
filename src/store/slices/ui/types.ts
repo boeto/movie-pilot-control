@@ -1,9 +1,3 @@
-import { ModeName } from '@/components';
 export interface UiSliceState {
-  mode: ModeName;
+  isSidebarOpen: boolean;
 }
-
-// export interface Mode {
-//   username: string;
-//   password: string;
-// }
