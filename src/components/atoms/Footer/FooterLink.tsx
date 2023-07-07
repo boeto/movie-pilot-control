@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
 
-import { footerCustomTheme } from './theme';
+import { getFooterCustomTheme } from './theme';
 import type { FooterLinkProps } from './types';
 
 const FooterLink: FC<FooterLinkProps> = ({ children, ...props }) => {
+  const theme = getFooterCustomTheme()?.groupLink?.link;
   return (
-    <FlowbiteFooter.Link theme={footerCustomTheme?.groupLink?.link} {...props}>
+    <FlowbiteFooter.Link theme={theme} {...props}>
       {children}
     </FlowbiteFooter.Link>
   );

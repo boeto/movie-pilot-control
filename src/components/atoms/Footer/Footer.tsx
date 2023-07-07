@@ -9,12 +9,13 @@ import { FooterIcon } from './FooterIcon';
 import { FooterLink } from './FooterLink';
 import { FooterLinkGroup } from './FooterLinkGroup';
 import { FooterTitle } from './FooterTitle';
-import { footerCustomTheme } from './theme';
+import { getFooterCustomTheme } from './theme';
 import type { FooterProps } from './types';
 
 const FooterComponent: FC<FooterProps> = ({ children, ...props }) => {
+  const theme = getFooterCustomTheme();
   return (
-    <FlowbiteFooter theme={footerCustomTheme} {...props}>
+    <FlowbiteFooter theme={theme} {...props}>
       {children}
     </FlowbiteFooter>
   );

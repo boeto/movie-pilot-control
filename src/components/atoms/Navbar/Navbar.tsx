@@ -6,12 +6,13 @@ import { NavbarBrand } from './NavbarBrand';
 import { NavbarCollapse } from './NavbarCollapse';
 import { NavbarLink } from './NavbarLink';
 import { NavbarToggle } from './NavbarToggle';
-import { navbarCustomTheme } from './theme';
+import { getNavbarCustomTheme } from './theme';
 import type { NavbarComponentProps } from './types';
 
 const NavbarComponent: FC<NavbarComponentProps> = ({ children, ...props }) => {
+  const theme = getNavbarCustomTheme()?.root;
   return (
-    <FlowbiteNavbar theme={navbarCustomTheme?.root} {...props}>
+    <FlowbiteNavbar theme={theme} {...props}>
       {children}
     </FlowbiteNavbar>
   );

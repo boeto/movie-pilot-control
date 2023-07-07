@@ -1,5 +1,8 @@
 import { CustomFlowbiteTheme } from 'flowbite-react';
 
-const textInputCustomTheme: CustomFlowbiteTheme['textInput'] = {};
+const getTextInputCustomTheme = (): CustomFlowbiteTheme['textInput'] => {
+  const textInputCustomTheme = {};
+  return textInputCustomTheme;
+};
 
-export { textInputCustomTheme };
+export { getTextInputCustomTheme };

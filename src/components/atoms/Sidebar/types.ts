@@ -9,30 +9,45 @@ import type { SidebarItemsProps as FlowbiteSidebarsItemsProps } from 'flowbite-r
 
 import type { SidebarProps as FlowbiteSidebarComponentProps } from '@/components/flowbite-react';
 
-interface SidebarComponentProps
-  extends Omit<FlowbiteSidebarComponentProps, 'theme'> {}
+interface SidebarItemCustomThemeProps {}
+interface SidebarCollapseCustomThemeProps {}
+interface SidebarCTACustomThemeProps {}
 
-interface SidebarItemProps extends Omit<FlowbiteSidebarItemProps, 'theme'> {
-  isHidden?: boolean;
+interface SidebarCustomThemeProps {
+  item?: SidebarItemCustomThemeProps;
+  collapse?: SidebarCollapseCustomThemeProps;
+  cta?: SidebarCTACustomThemeProps;
 }
 
-interface SidebarItemsProps extends FlowbiteSidebarsItemsProps {}
-
-interface SidebarItemGroupProps extends FlowbiteSidebarsItemGroupProps {}
+interface SidebarItemProps
+  extends Omit<FlowbiteSidebarItemProps, 'theme'>,
+    SidebarItemCustomThemeProps {
+  isHidden?: boolean;
+}
 
 interface SidebarCollapseProps
-  extends Omit<FlowbiteSidebarsCollapseProps, 'theme'> {
+  extends Omit<FlowbiteSidebarsCollapseProps, 'theme'>,
+    SidebarCollapseCustomThemeProps {
   isHidden?: boolean;
 }
 
-interface SidebarCTAProps extends Omit<FlowbiteSidebarsCTAProps, 'theme'> {}
+interface SidebarCTAProps
+  extends Omit<FlowbiteSidebarsCTAProps, 'theme'>,
+    SidebarCTACustomThemeProps {}
 
+interface SidebarComponentProps
+  extends Omit<FlowbiteSidebarComponentProps, 'theme'>,
+    SidebarCustomThemeProps {}
+
+interface SidebarItemsProps extends FlowbiteSidebarsItemsProps {}
+interface SidebarItemGroupProps extends FlowbiteSidebarsItemGroupProps {}
 interface SidebarLogoProps extends FlowbiteSidebarsLogoProps {}
 
 export type {
   SidebarCollapseProps,
   SidebarComponentProps,
   SidebarCTAProps,
+  SidebarCustomThemeProps,
   SidebarItemGroupProps,
   SidebarItemProps,
   SidebarItemsProps,

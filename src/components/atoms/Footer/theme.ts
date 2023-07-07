@@ -1,5 +1,8 @@
 import { CustomFlowbiteTheme } from 'flowbite-react';
 
-const footerCustomTheme: CustomFlowbiteTheme['footer'] = {};
+const getFooterCustomTheme = (): CustomFlowbiteTheme['footer'] => {
+  const footerCustomTheme = {};
+  return footerCustomTheme;
+};
 
-export { footerCustomTheme };
+export { getFooterCustomTheme };

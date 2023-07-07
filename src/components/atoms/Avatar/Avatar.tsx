@@ -4,12 +4,13 @@ import { Avatar as FlowbiteAvatar } from '@/components/flowbite-react';
 
 import { AvatarGroup } from './AvatarGroup';
 import { AvatarGroupCounter } from './AvatarGroupCounter';
-import { avatarCustomTheme } from './theme';
-import type { AvatarProps } from './types';
+import { getAvatarCustomTheme } from './theme';
+import type { AvatarComponentProps } from './types';
 
-const AvatarComponent: FC<AvatarProps> = ({ children, ...props }) => {
+const AvatarComponent: FC<AvatarComponentProps> = ({ children, ...props }) => {
+  const theme = getAvatarCustomTheme();
   return (
-    <FlowbiteAvatar theme={avatarCustomTheme} {...props}>
+    <FlowbiteAvatar theme={theme} {...props}>
       {children}
     </FlowbiteAvatar>
   );

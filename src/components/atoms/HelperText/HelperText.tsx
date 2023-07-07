@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { HelperText as FlowbiteHelperText } from '@/components/flowbite-react';
 
-import { helperTextCustomTheme } from './theme';
+import { getHelperTextCustomTheme } from './theme';
 import type { HelperTextProps } from './types';
 
 const HelperText: FC<HelperTextProps> = ({ children, ...props }) => {
+  const theme = getHelperTextCustomTheme();
   return (
-    <FlowbiteHelperText theme={helperTextCustomTheme} {...props}>
+    <FlowbiteHelperText theme={theme} {...props}>
       {children}
     </FlowbiteHelperText>
   );

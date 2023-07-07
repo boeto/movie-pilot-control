@@ -5,9 +5,28 @@ import type {
 
 import type { AvatarProps as FlowbiteAvatarProps } from '@/components/flowbite-react';
 
-interface AvatarProps extends Omit<FlowbiteAvatarProps, 'theme'> {}
-interface AvatarGroupProps extends Omit<FlowbiteAvatarGroupProps, 'theme'> {}
-interface AvatarGroupCounterProps
-  extends Omit<FlowbiteAvatarGroupCounterProps, 'theme'> {}
+interface AvatarGroupCustomThemeProps {}
+interface AvatarGroupCounterCustomThemeProps {}
 
-export type { AvatarGroupCounterProps, AvatarGroupProps, AvatarProps };
+interface AvatarCustomThemeProps {
+  avatarGroup?: AvatarGroupCustomThemeProps;
+  avatarGroupCounter?: AvatarGroupCounterCustomThemeProps;
+}
+
+interface AvatarComponentProps
+  extends Omit<FlowbiteAvatarProps, 'theme'>,
+    AvatarCustomThemeProps {}
+
+interface AvatarGroupProps
+  extends Omit<FlowbiteAvatarGroupProps, 'theme'>,
+    AvatarGroupCustomThemeProps {}
+interface AvatarGroupCounterProps
+  extends Omit<FlowbiteAvatarGroupCounterProps, 'theme'>,
+    AvatarGroupCounterCustomThemeProps {}
+
+export type {
+  AvatarComponentProps,
+  AvatarCustomThemeProps,
+  AvatarGroupCounterProps,
+  AvatarGroupProps,
+};

@@ -1,4 +1,8 @@
 {
+  "Project": {
+    "title": "Movie Pilot Control",
+    "description": "這是MoviePilot的前端網頁"
+  },
   "Sidebar": {
     "dashboard": "儀表板",
     "search": "搜索",

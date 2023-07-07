@@ -1,5 +1,5 @@
 import { createPaths } from './create-paths';
-import { PathLanbels, PathsCollapse, PathsItem } from './types';
+import { PathsCollapse, PathsItem } from './types';
 
 import { localeOption } from '../i18n';
 
@@ -14,7 +14,8 @@ const findCollapseLabelByPath = (path: string) => {
   return collapse?.collapseLabel;
 };
 
-const findPath = ({ itemLabel, collapseLabel }: PathLanbels) => {
+// const findPath = ({ itemLabel, collapseLabel }: PathLanbels) => {
+const findPath = (itemLabel: string, collapseLabel?: string) => {
   const paths = createPaths();
   if (collapseLabel) {
     const collapse = paths.find(
@@ -32,9 +33,11 @@ const findPath = ({ itemLabel, collapseLabel }: PathLanbels) => {
 
 const getLocalePath = (
   locale: string = localeOption.defaultLocale,
-  pathLanbels: PathLanbels = { itemLabel: 'dashboard' },
+  // pathLanbels: PathLanbels = { itemLabel: 'dashboard' },
+  itemLabel = 'dashboard',
+  collapseLabel?: string,
 ) => {
-  const path = findPath(pathLanbels);
+  const path = findPath(itemLabel, collapseLabel);
 
   const localePath =
     locale === localeOption.defaultLocale ? path : `/${locale}${path}`;

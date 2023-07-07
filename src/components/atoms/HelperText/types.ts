@@ -1,4 +1,9 @@
 import type { HelperTextProps as FlowbiteHelperTextProps } from '@/components/flowbite-react';
 
-export interface HelperTextProps
-  extends Omit<FlowbiteHelperTextProps, 'theme'> {}
+interface HelperTextCustomThemeProps {}
+
+interface HelperTextProps
+  extends Omit<FlowbiteHelperTextProps, 'theme'>,
+    HelperTextCustomThemeProps {}
+
+export type { HelperTextCustomThemeProps, HelperTextProps };

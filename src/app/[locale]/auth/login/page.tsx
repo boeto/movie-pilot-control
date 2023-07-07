@@ -82,6 +82,7 @@ const AuthLoginPage: FC = () => {
   const dispatch = useDispatch();
 
   const t = useTranslations('Auth');
+  const tp = useTranslations('Project');
 
   const { isLoading, actionError, isLogin, accessToken } =
     useSelector(selectAuth);
@@ -164,7 +165,7 @@ const AuthLoginPage: FC = () => {
       <div className="my-6 flex items-center gap-x-1 lg:my-0">
         <Logo />
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          MoviePilot
+          {tp('title')}
         </span>
       </div>
       <Card
@@ -172,7 +173,7 @@ const AuthLoginPage: FC = () => {
         imgSrc="/images/authentication/login.jpg"
         imgAlt=""
         className="w-full transition md:max-w-3xl md:[&>*]:w-full md:[&>*]:p-16 [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 lg:[&>img]:block"
-        childrenClassName="justify-start"
+        isChildrenStart
       >
         <h1 className="mb-2 text-2xl font-bold dark:text-white md:mb-6 md:text-3xl">
           {t('title')}
