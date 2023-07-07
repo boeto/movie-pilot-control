@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
 
-import { footerCustomTheme } from './theme';
+import { getFooterCustomTheme } from './theme';
 import type { FooterDividerProps } from './types';
 
 const FooterDivider: FC<FooterDividerProps> = ({ children, ...props }) => {
+  const theme = getFooterCustomTheme()?.divider;
   return (
-    <FlowbiteFooter.Divider theme={footerCustomTheme?.divider} {...props}>
+    <FlowbiteFooter.Divider theme={theme} {...props}>
       {children}
     </FlowbiteFooter.Divider>
   );

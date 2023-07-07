@@ -18,9 +18,6 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts?(x)'],
-      // parserOptions: {
-      //   project: ['./tsconfig.json'], // Specify it only for TypeScript files
-      // },
       rules: {
         'simple-import-sort/imports': [
           'error',
@@ -43,7 +40,6 @@ module.exports = {
         ],
 
         // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb/rules
-
         'import/exports-last': 'error',
         'import/group-exports': 'error',
         'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],

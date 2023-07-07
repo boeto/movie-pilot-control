@@ -1,5 +1,8 @@
 import { CustomFlowbiteTheme } from 'flowbite-react';
 
-const avatarCustomTheme: CustomFlowbiteTheme['avatar'] = {};
+const getAvatarCustomTheme = (): CustomFlowbiteTheme['avatar'] => {
+  const avatarCustomTheme = {};
+  return avatarCustomTheme;
+};
 
-export { avatarCustomTheme };
+export { getAvatarCustomTheme };

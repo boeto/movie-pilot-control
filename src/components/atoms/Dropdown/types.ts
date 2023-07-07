@@ -5,10 +5,18 @@ import type {
   DropdownProps as FlowbiteDropdownComponentProps,
 } from '@/components/flowbite-react';
 
-interface DropdownComponentProps
-  extends Omit<FlowbiteDropdownComponentProps, 'theme'> {}
+interface DropdownItemCustomThemeProps {}
+interface DropdownCustomThemeProps {
+  item?: DropdownItemCustomThemeProps;
+}
 
-interface DropdownItemProps extends Omit<FlowbiteDropdownItemProps, 'theme'> {}
+interface DropdownComponentProps
+  extends Omit<FlowbiteDropdownComponentProps, 'theme'>,
+    DropdownCustomThemeProps {}
+
+interface DropdownItemProps
+  extends Omit<FlowbiteDropdownItemProps, 'theme'>,
+    DropdownItemCustomThemeProps {}
 
 type DropdownDividerProps = ComponentProps<'div'>;
 
@@ -16,6 +24,7 @@ type DropdownHeaderProps = PropsWithChildren & DropdownDividerProps;
 
 export type {
   DropdownComponentProps,
+  DropdownCustomThemeProps,
   DropdownDividerProps,
   DropdownHeaderProps,
   DropdownItemProps,

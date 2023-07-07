@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
 
-import { sidebarCustomTheme } from './theme';
+import { getSidebarCustomTheme } from './theme';
 import { SidebarCollapseProps } from './types';
 
 const SidebarCollapse: FC<SidebarCollapseProps> = ({
@@ -10,10 +10,11 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({
   isHidden = false,
   ...props
 }) => {
+  const theme = getSidebarCustomTheme()?.collapse;
   return isHidden ? (
     <></>
   ) : (
-    <FlowbiteSidebar.Collapse theme={sidebarCustomTheme?.collapse} {...props}>
+    <FlowbiteSidebar.Collapse theme={theme} {...props}>
       {children}
     </FlowbiteSidebar.Collapse>
   );

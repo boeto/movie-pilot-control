@@ -9,11 +9,14 @@ import { CardCustomThemeProps } from './types';
 const cardDefaultTheme = theme.card;
 
 const getCardCustomTheme = (
-  props: CardCustomThemeProps,
+  customTheme: CardCustomThemeProps,
 ): CustomFlowbiteTheme['card'] => {
   const cardCustomTheme = {
     root: {
-      children: twMerge(theme.card.root.children, props.childrenClassName),
+      children: twMerge(
+        theme.card.root.children,
+        customTheme.isChildrenStart ? 'justify-start' : '',
+      ),
     },
   };
 

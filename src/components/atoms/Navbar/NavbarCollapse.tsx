@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Navbar } from '@/components/flowbite-react';
 
-import { navbarCustomTheme } from './theme';
+import { getNavbarCustomTheme } from './theme';
 import { NavbarCollapseProps } from './types';
 
 const NavbarCollapse: FC<NavbarCollapseProps> = ({ children, ...props }) => {
+  const theme = getNavbarCustomTheme()?.collapse;
   return (
-    <Navbar.Collapse theme={navbarCustomTheme?.collapse} {...props}>
+    <Navbar.Collapse theme={theme} {...props}>
       {children}
     </Navbar.Collapse>
   );

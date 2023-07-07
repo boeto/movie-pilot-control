@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { Button as FlowbiteButton } from '@/components/flowbite-react';
 
 import { ButtonGroup } from './ButtonGroup';
-import { buttonCustomTheme } from './theme';
+import { getButtonCustomTheme } from './theme';
 import type { ButtonProps } from './types';
 
 const ButtonComponent: FC<ButtonProps> = ({
@@ -13,8 +13,9 @@ const ButtonComponent: FC<ButtonProps> = ({
   color = 'primary',
   ...props
 }) => {
+  const theme = getButtonCustomTheme();
   return (
-    <FlowbiteButton color={color} theme={buttonCustomTheme} {...props}>
+    <FlowbiteButton color={color} theme={theme} {...props}>
       {children}
     </FlowbiteButton>
   );

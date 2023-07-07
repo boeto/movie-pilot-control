@@ -1,7 +1,7 @@
 import type { CardProps as FlowbiteCardProps } from '@/components/flowbite-react';
 
 interface CardCustomThemeProps {
-  childrenClassName?: string;
+  isChildrenStart?: boolean;
 }
 
 interface CardProps

@@ -7,9 +7,11 @@ import { Card as FlowbiteCard } from '@/components/flowbite-react';
 import { getCardCustomTheme } from './theme';
 import type { CardProps } from './types';
 
-const Card: FC<CardProps> = ({ children, childrenClassName, ...props }) => {
+const Card: FC<CardProps> = ({ children, isChildrenStart, ...props }) => {
+  const theme = getCardCustomTheme({ isChildrenStart });
+
   return (
-    <FlowbiteCard theme={getCardCustomTheme({ childrenClassName })} {...props}>
+    <FlowbiteCard theme={theme} {...props}>
       {children}
     </FlowbiteCard>
   );

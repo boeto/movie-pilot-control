@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
 
-import { sidebarCustomTheme } from './theme';
+import { getSidebarCustomTheme } from './theme';
 import { SidebarItemProps } from './types';
 
 const SidebarItem: FC<SidebarItemProps> = ({
@@ -10,10 +10,12 @@ const SidebarItem: FC<SidebarItemProps> = ({
   isHidden = false,
   ...props
 }) => {
+  const theme = getSidebarCustomTheme()?.item;
+
   return isHidden ? (
     <></>
   ) : (
-    <FlowbiteSidebar.Item theme={sidebarCustomTheme?.item} {...props}>
+    <FlowbiteSidebar.Item theme={theme} {...props}>
       {children}
     </FlowbiteSidebar.Item>
   );

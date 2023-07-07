@@ -16,10 +16,7 @@ const LayoutPageMain = ({
 }) => {
   const pathname = usePathname();
 
-  const authLoginPath = getLocalePath(locale, {
-    itemLabel: 'authLogin',
-    collapseLabel: 'auth',
-  });
+  const authLoginPath = getLocalePath(locale, 'authLogin', 'auth');
 
   if (pathname === authLoginPath) return <>{children}</>;
 

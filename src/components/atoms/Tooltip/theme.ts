@@ -1,5 +1,8 @@
 import { CustomFlowbiteTheme } from 'flowbite-react';
 
-const tooltipCustomTheme: CustomFlowbiteTheme['tooltip'] = {};
+const getTooltipCustomTheme = (): CustomFlowbiteTheme['tooltip'] => {
+  const tooltipCustomTheme = {};
+  return tooltipCustomTheme;
+};
 
-export { tooltipCustomTheme };
+export { getTooltipCustomTheme };

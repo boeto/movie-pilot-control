@@ -2,11 +2,12 @@ import { FC } from 'react';
 
 import { TextInput as FlowbiteTextInput } from '@/components/flowbite-react';
 
-import { textInputCustomTheme } from './theme';
+import { getTextInputCustomTheme } from './theme';
 import type { TextInputProps } from './types';
 
 const TextInput: FC<TextInputProps> = ({ ...props }) => {
-  return <FlowbiteTextInput theme={textInputCustomTheme} {...props} />;
+  const theme = getTextInputCustomTheme();
+  return <FlowbiteTextInput theme={theme} {...props} />;
 };
 
 TextInput.displayName = 'TextInput';

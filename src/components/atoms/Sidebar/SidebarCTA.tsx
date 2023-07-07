@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Sidebar as FlowbiteSidebar } from '@/components/flowbite-react';
 
-import { sidebarCustomTheme } from './theme';
+import { getSidebarCustomTheme } from './theme';
 import { SidebarCTAProps } from './types';
 
 const SidebarCTA: FC<SidebarCTAProps> = ({ children, ...props }) => {
+  const theme = getSidebarCustomTheme()?.cta;
   return (
-    <FlowbiteSidebar.CTA theme={sidebarCustomTheme?.cta} {...props}>
+    <FlowbiteSidebar.CTA theme={theme} {...props}>
       {children}
     </FlowbiteSidebar.CTA>
   );

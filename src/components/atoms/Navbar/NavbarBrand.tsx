@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Navbar } from '@/components/flowbite-react';
 
-import { navbarCustomTheme } from './theme';
+import { getNavbarCustomTheme } from './theme';
 import { NavbarBrandProps } from './types';
 
 const NavbarBrand: FC<NavbarBrandProps> = ({ children, ...props }) => {
+  const theme = getNavbarCustomTheme()?.brand;
   return (
-    <Navbar.Brand theme={navbarCustomTheme?.brand} {...props}>
+    <Navbar.Brand theme={theme} {...props}>
       {children}
     </Navbar.Brand>
   );

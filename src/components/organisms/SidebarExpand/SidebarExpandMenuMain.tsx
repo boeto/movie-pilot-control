@@ -24,7 +24,7 @@ const SidebarExpandMenuMain: FC<SidebarExpandMenuMainProps> = ({
     <Sidebar.ItemGroup {...props}>
       {paths.map((p) => {
         if ('path' in p) {
-          const path = getLocalePath(locale, { itemLabel: p.itemLabel });
+          const path = getLocalePath(locale, p.itemLabel);
 
           return (
             <Sidebar.Item
@@ -47,10 +47,7 @@ const SidebarExpandMenuMain: FC<SidebarExpandMenuMainProps> = ({
             open={false}
           >
             {p.item.map((i) => {
-              const path = getLocalePath(locale, {
-                itemLabel: i.itemLabel,
-                collapseLabel: p.collapseLabel,
-              });
+              const path = getLocalePath(locale, i.itemLabel, p.collapseLabel);
               return (
                 <Sidebar.Item
                   key={i.itemLabel}

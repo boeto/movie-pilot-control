@@ -1,4 +1,8 @@
 {
+  "Project": {
+    "title": "Movie Pilot Control",
+    "description": "This is a front-end web for MoviePilot"
+  },
   "Sidebar": {
     "dashboard": "Dashboard",
     "search": "Search",

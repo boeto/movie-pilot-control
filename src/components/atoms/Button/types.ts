@@ -3,7 +3,14 @@ import type {
   ButtonProps as FlowbiteButtonProps,
 } from '@/components/flowbite-react';
 
-interface ButtonProps extends Omit<FlowbiteButtonProps, 'theme'> {}
-interface ButtonGroupProps extends Omit<FlowbiteButtonGroupProps, 'theme'> {}
+interface ButtonCustomThemeProps {}
+interface ButtonGroupCustomThemeProps {}
 
-export type { ButtonGroupProps, ButtonProps };
+interface ButtonProps
+  extends Omit<FlowbiteButtonProps, 'theme'>,
+    ButtonCustomThemeProps {}
+interface ButtonGroupProps
+  extends Omit<FlowbiteButtonGroupProps, 'theme'>,
+    ButtonGroupCustomThemeProps {}
+
+export type { ButtonCustomThemeProps, ButtonGroupProps, ButtonProps };

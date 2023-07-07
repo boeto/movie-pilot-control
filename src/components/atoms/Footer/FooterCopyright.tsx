@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 import { Footer as FlowbiteFooter } from '@/components/flowbite-react';
 
-import { footerCustomTheme } from './theme';
+import { getFooterCustomTheme } from './theme';
 import type { FooterCopyrightProps } from './types';
 
 const FooterCopyright: FC<FooterCopyrightProps> = ({ children, ...props }) => {
+  const theme = getFooterCustomTheme()?.copyright;
   return (
-    <FlowbiteFooter.Copyright theme={footerCustomTheme?.copyright} {...props}>
+    <FlowbiteFooter.Copyright theme={theme} {...props}>
       {children}
     </FlowbiteFooter.Copyright>
   );

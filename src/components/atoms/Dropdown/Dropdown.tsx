@@ -5,15 +5,16 @@ import { Dropdown as FlowbiteDropdown } from '@/components/flowbite-react';
 import { DropdownDivider } from './DropdownDivider';
 import { DropdownHeader } from './DropdownHeader';
 import { DropdownItem } from './DropdownItem';
-import { dropdownCustomTheme } from './theme';
+import { getDropdownCustomTheme } from './theme';
 import type { DropdownComponentProps } from './types';
 
 const DropdownComponent: FC<DropdownComponentProps> = ({
   children,
   ...props
 }) => {
+  const theme = getDropdownCustomTheme();
   return (
-    <FlowbiteDropdown theme={dropdownCustomTheme} {...props}>
+    <FlowbiteDropdown theme={theme} {...props}>
       {children}
     </FlowbiteDropdown>
   );

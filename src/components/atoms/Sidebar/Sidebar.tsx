@@ -8,7 +8,7 @@ import { SidebarItem } from './SidebarItem';
 import { SidebarItemGroup } from './SidebarItemGroup';
 import { SidebarItems } from './SidebarItems';
 import { SidebarLogo } from './SidebarLogo';
-import { sidebarCustomTheme } from './theme';
+import { getSidebarCustomTheme } from './theme';
 import type { SidebarComponentProps } from './types';
 
 const SidebarComponent: FC<SidebarComponentProps> = ({
@@ -16,12 +16,9 @@ const SidebarComponent: FC<SidebarComponentProps> = ({
   collapsed,
   ...props
 }) => {
+  const theme = getSidebarCustomTheme();
   return (
-    <FlowbiteSidebar
-      collapsed={collapsed}
-      theme={sidebarCustomTheme}
-      {...props}
-    >
+    <FlowbiteSidebar collapsed={collapsed} theme={theme} {...props}>
       {children}
     </FlowbiteSidebar>
   );

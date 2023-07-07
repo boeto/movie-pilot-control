@@ -1,12 +1,21 @@
-import { CustomFlowbiteTheme } from 'flowbite-react';
+import { twMerge } from 'tailwind-merge';
 
-const dropdownCustomTheme: CustomFlowbiteTheme['dropdown'] = {
-  floating: {
-    base: 'z-10 w-fit rounded-xl divide-y divide-gray-100 shadow',
-    content: 'rounded-xl text-sm text-gray-700 dark:text-gray-200',
-    target: 'w-fit dark:text-white',
-  },
-  content: '',
+import { CustomFlowbiteTheme, theme } from '@/components/flowbite-react';
+import { twSort } from '@/utils';
+
+const getDropdownCustomTheme = (): CustomFlowbiteTheme['dropdown'] => {
+  const dropdownCustomTheme = {
+    floating: {
+      base: twMerge(theme.dropdown.floating.base, 'rounded-xl'),
+      content: twMerge(
+        theme.dropdown.floating.content,
+        twSort('rounded-xl py-0'),
+      ),
+      target: twMerge(theme.dropdown.floating.target, 'dark:text-white'),
+    },
+    content: twMerge(theme.dropdown.content, 'py-0'),
+  };
+  return dropdownCustomTheme;
 };
 
-export { dropdownCustomTheme };
+export { getDropdownCustomTheme };

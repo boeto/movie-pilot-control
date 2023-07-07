@@ -1,7 +1,13 @@
-import { CustomFlowbiteTheme } from 'flowbite-react';
+import { twMerge } from 'tailwind-merge';
 
-const textareaCustomTheme: CustomFlowbiteTheme['textarea'] = {
-  base: 'block w-full text-sm p-4 rounded-lg border disabled:cursor-not-allowed disabled:opacity-50',
+import { CustomFlowbiteTheme, theme } from '@/components/flowbite-react';
+import { twSort } from '@/utils';
+
+const getTextareaCustomTheme = (): CustomFlowbiteTheme['textarea'] => {
+  const textareaCustomTheme = {
+    base: twMerge(theme.textInput.base, twSort('p-4 text-sm')),
+  };
+  return textareaCustomTheme;
 };
 
-export { textareaCustomTheme };
+export { getTextareaCustomTheme };

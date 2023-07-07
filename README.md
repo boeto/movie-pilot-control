@@ -1,6 +1,6 @@
 # Movie Pilot Control
 
-This is a front-end project for [Movie Pilot](https://github.com/jxxghp/MoviePilot), developed using [Next.js](https://nextjs.org/) and [Flowbite React](https://www.flowbite-react.com/).
+This is a front-end web for [Movie Pilot](https://github.com/jxxghp/MoviePilot), developed using [Next.js](https://nextjs.org/) and [Flowbite React](https://www.flowbite-react.com/).
 
 ## To run and view the project locally using Docker
 

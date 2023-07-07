@@ -6,6 +6,13 @@ import type {
   NavbarToggleProps as FlowbiteNavbarsToggleProps,
 } from '@/components/flowbite-react';
 
+interface NavbarRootCustomThemeProps {}
+interface NavbarCollapseCustomThemeProps {}
+interface NavbarCustomThemeProps {
+  root: NavbarRootCustomThemeProps;
+  collapse: NavbarCollapseCustomThemeProps;
+}
+
 interface NavbarBrandProps extends PropsWithChildren, ComponentProps<'a'> {
   as?: ElementType;
   href?: string;
@@ -19,16 +26,20 @@ interface NavbarLinkProps extends PropsWithChildren, ComponentProps<'a'> {
 }
 
 interface NavbarComponentProps
-  extends Omit<FlowbiteNavbarComponentProps, 'theme'> {}
+  extends Omit<FlowbiteNavbarComponentProps, 'theme'>,
+    NavbarRootCustomThemeProps {}
 
 interface NavbarCollapseProps
   extends Omit<FlowbiteNavbarsCollapseProps, 'theme'> {}
-interface NavbarToggleProps extends Omit<FlowbiteNavbarsToggleProps, 'theme'> {}
+interface NavbarToggleProps
+  extends Omit<FlowbiteNavbarsToggleProps, 'theme'>,
+    NavbarCollapseCustomThemeProps {}
 
 export type {
   NavbarBrandProps,
   NavbarCollapseProps,
   NavbarComponentProps,
+  NavbarCustomThemeProps,
   NavbarLinkProps,
   NavbarToggleProps,
 };
