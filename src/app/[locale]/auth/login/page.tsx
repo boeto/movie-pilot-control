@@ -8,14 +8,15 @@ import { useTranslations } from 'next-intl';
 import {
   Button,
   Card,
-  ColorsName,
   HelperText,
   Label,
   Logo,
   Spinner,
   TextInput,
 } from '@/components';
+import { ColorsName, StatusWithoutDisabledName } from '@/components/types';
 import {
+  addToast,
   selectAuth,
   setActionError,
   setAuthLoginAsync,
@@ -76,17 +77,16 @@ const AuthLoginPage: FC = () => {
     usernameError: undefined,
     passwordError: undefined,
   };
-  const initialactionErrorMessage: string = '';
+  const t = useTranslations('Auth');
+  const tp = useTranslations('Project');
 
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const t = useTranslations('Auth');
-  const tp = useTranslations('Project');
-
   const { isLoading, actionError, isLogin, accessToken } =
     useSelector(selectAuth);
 
+  const initialactionErrorMessage: string = '';
   const [formData, setFormData] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [actionErrorMessage, setActionErrorMessage] = useState(
@@ -94,7 +94,7 @@ const AuthLoginPage: FC = () => {
   );
 
   useEffect(() => {
-    if (actionError)
+    if (actionError) {
       switch (actionError) {
         case '401':
           setActionErrorMessage(t('error401'));
@@ -116,17 +116,25 @@ const AuthLoginPage: FC = () => {
           setActionErrorMessage(`${t('errorLogin')}${actionError}`);
           break;
       }
-    else setActionErrorMessage(initialactionErrorMessage);
+    }
   }, [actionError, t]);
 
   useEffect(() => {
     if (accessToken && isLogin) {
       router.push('/');
+      dispatch(
+        addToast({
+          statusColor: StatusWithoutDisabledName.SUCCESS,
+          message: t('loginSuccess'),
+          delay: 1200,
+        }),
+      );
     }
-  }, [accessToken, isLogin, router]);
+  }, [accessToken, dispatch, isLogin, router, t]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
+    if (!value) return;
     setFormData((prevFormData) => {
       return { ...prevFormData, [name]: value };
     });
@@ -136,8 +144,8 @@ const AuthLoginPage: FC = () => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
-    dispatch(setActionError(undefined));
     setFormErrors(initialFormErrors);
+    dispatch(setActionError(undefined));
 
     if (!formData.username) {
       setFormErrors((prevFormErrors) => {
@@ -161,68 +169,70 @@ const AuthLoginPage: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 lg:h-screen lg:gap-y-12">
-      <div className="my-6 flex items-center gap-x-1 lg:my-0">
-        <Logo />
-        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          {tp('title')}
-        </span>
-      </div>
-      <Card
-        horizontal
-        imgSrc="/images/authentication/login.jpg"
-        imgAlt=""
-        className="w-full transition md:max-w-3xl md:[&>*]:w-full md:[&>*]:p-16 [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 lg:[&>img]:block"
-        isChildrenStart
-      >
-        <h1 className="mb-2 text-2xl font-bold dark:text-white md:mb-6 md:text-3xl">
-          {t('title')}
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <FormInput
-            type="text"
-            label={t('username')}
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            error={formErrors.usernameError}
-          />
-          <FormInput
-            type="password"
-            label={t('password')}
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            error={formErrors.passwordError}
-            placeholder="••••••••"
-          />
-
-          <div className="mt-8">
-            <Button
-              type="submit"
-              className="w-full"
-              color={
-                actionErrorMessage ||
-                formErrors.usernameError ||
-                formErrors.passwordError
-                  ? ColorsName.FAILURE
-                  : ColorsName.PRIMARY
-              }
-              disabled={isLoading}
-              isProcessing={isLoading}
-              processingSpinner=<Spinner size="sm" light />
-            >
-              {isLoading ? t('logging') : t('login')}
-            </Button>
-            <HelperText
-              color={ColorsName.FAILURE}
-              value={actionErrorMessage}
-              className={actionErrorMessage ? '' : 'hidden'}
+    <>
+      <div className="flex flex-col items-center justify-center px-6 lg:h-screen lg:gap-y-12">
+        <div className="my-6 flex items-center gap-x-1 lg:my-0">
+          <Logo />
+          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            {tp('title')}
+          </span>
+        </div>
+        <Card
+          horizontal
+          imgSrc="/images/authentication/login.jpg"
+          imgAlt=""
+          className="w-full transition md:max-w-3xl md:[&>*]:w-full md:[&>*]:p-16 [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 lg:[&>img]:block"
+          isChildrenStart
+        >
+          <h1 className="mb-2 text-2xl font-bold dark:text-white md:mb-6 md:text-3xl">
+            {t('title')}
+          </h1>
+          <form onSubmit={handleSubmit}>
+            <FormInput
+              type="text"
+              label={t('username')}
+              name="username"
+              value={formData.username}
+              onChange={handleInputChange}
+              error={formErrors.usernameError}
             />
-          </div>
-        </form>
-      </Card>
-    </div>
+            <FormInput
+              type="password"
+              label={t('password')}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              error={formErrors.passwordError}
+              placeholder="••••••••"
+            />
+
+            <div className="mt-8">
+              <Button
+                type="submit"
+                className="w-full"
+                color={
+                  actionErrorMessage ||
+                  formErrors.usernameError ||
+                  formErrors.passwordError
+                    ? ColorsName.FAILURE
+                    : ColorsName.PRIMARY
+                }
+                disabled={isLoading}
+                isProcessing={isLoading}
+                processingSpinner=<Spinner size="sm" light />
+              >
+                {isLoading ? t('logging') : t('login')}
+              </Button>
+              <HelperText
+                color={ColorsName.FAILURE}
+                value={actionErrorMessage}
+                className={actionErrorMessage ? '' : 'hidden'}
+              />
+            </div>
+          </form>
+        </Card>
+      </div>
+    </>
   );
 };
 

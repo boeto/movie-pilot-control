@@ -1,5 +1,4 @@
-import { CustomFlowbiteTheme } from 'flowbite-react';
-
+import { CustomFlowbiteTheme } from '@/components/flowbite-react';
 import { twSort } from '@/utils';
 
 const getNavbarCustomTheme = (): CustomFlowbiteTheme['navbar'] => {

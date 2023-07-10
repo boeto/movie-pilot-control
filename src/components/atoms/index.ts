@@ -15,4 +15,5 @@ export * from './Sidebar';
 export * from './Spinner';
 export * from './Textarea';
 export * from './TextInput';
+export * from './Toast';
 export * from './Tooltip';

@@ -19,7 +19,7 @@ const ContentMain: FC<PropsWithChildren<NavbarSidebarLayoutProps>> = ({
   return (
     <main
       className={twMerge(
-        'relative h-full w-full overflow-y-auto bg-gray-50 dark:bg-gray-900',
+        'relative h-screen w-full overflow-y-auto bg-gray-50 dark:bg-gray-900',
         isSidebarOpen ? 'lg:ml-16' : 'lg:ml-64',
       )}
     >

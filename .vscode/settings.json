@@ -12,5 +12,12 @@
     "source.fixAll.eslint": true
   },
 
-  "debug.javascript.unmapMissingSources": true
+  "debug.javascript.unmapMissingSources": true,
+
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "(?:twMerge|twSort|twJoin)\\(([^\\);]*)[\\);]",
+      "[`'\"`]([^'\"`,;]*)[`'\"`]"
+    ]
+  ]
 }

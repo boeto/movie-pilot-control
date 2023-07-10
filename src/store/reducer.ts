@@ -9,16 +9,19 @@ import {
 } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 
-import { authReducer } from './slices/auth/slice';
-import { counterReducer } from './slices/counter/slice';
-import { uiReducer } from './slices/ui/slice';
+import {
+  authReducer,
+  counterReducer,
+  messageReducer,
+  uiReducer,
+} from './slices';
 import { storage } from './storage';
 
 const rootPersistConfig = {
   key: 'root',
   storage,
   whitelist: ['counter'],
-  blacklist: ['auth', 'ui'],
+  blacklist: ['auth', 'ui', 'message'],
 };
 
 const authPersistConfig = {
@@ -31,11 +34,17 @@ const uiPersistConfig = {
   storage,
   whitelist: ['isSidebarOpen'],
 };
+const messagePersistConfig = {
+  key: 'message',
+  storage,
+  blacklist: ['toast', 'toastId'],
+};
 
 const rootReducers = {
   counter: counterReducer,
   auth: persistReducer(authPersistConfig, authReducer),
   ui: persistReducer(uiPersistConfig, uiReducer),
+  message: persistReducer(messagePersistConfig, messageReducer),
 };
 
 const rootReducer = combineReducers(rootReducers);
@@ -49,6 +58,7 @@ const rootReducerWithResetAll = (
     storage.removeItem('persist:root');
     storage.removeItem('persist:auth');
     storage.removeItem('persist:ui');
+    storage.removeItem('persist:message');
     // eslint-disable-next-line no-param-reassign
     state = undefined;
   }

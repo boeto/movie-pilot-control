@@ -8,10 +8,12 @@ type SliceLoginStatus =
   | SliceStatusName.LOADING
   | SliceStatusName.FAILED;
 
-interface CounterSliceState {
+interface CounterState {
   value: number;
   status: SliceLoginStatus;
 }
 
-export type { CounterSliceState, SliceLoginStatus };
-export { SliceStatusName };
+const nameSpace = 'counter';
+
+export type { CounterState, SliceLoginStatus };
+export { nameSpace, SliceStatusName };
