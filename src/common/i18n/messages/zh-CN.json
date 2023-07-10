@@ -40,14 +40,14 @@
     "settingsLibrary": "媒体库",
 
     "auth": "认证",
-    "authLogin": "登陆",
+    "authLogin": "登录",
     "authUsers": "用户"
   },
   "Auth": {
     "title": "LOGIN MOVIEPILOT",
 
-    "login": "登陆",
-    "logging": "登陆中 ...",
+    "login": "登录",
+    "logging": "登录中 ...",
 
     "username": "用户名",
     "password": "密码",
@@ -55,12 +55,20 @@
     "usernameError": "用户名为必填项",
     "passwordError": "密码为必填项",
 
-    "errorLogin": "登陆失败: ",
+    "errorLogin": "登录失败: ",
     "error401": "用户名或密码错误",
     "error403": "用户未启用",
     "error500": "服务器错误",
     "errorAccessTokenNotFound": "未获取访问令牌",
-    "errorFailedToFetch": "请求登陆失败"
+    "errorFailedToFetch": "请求登录失败",
+
+    "loginSuccess": "登录成功",
+    "logoutSuccess": "注销成功",
+
+    "loggedin": "已登录",
+    "notloggedin": "未登录",
+    "loginFirst": "请先登录...",
+    "logout": "注销"
   },
   "NotFoundPage": {
     "title": "404 页面哪去了",
@@ -68,9 +76,6 @@
     "backHome": "回家吧骚年"
   },
 
-  "HomePage": {
-    "welcome": "欢迎"
-  },
   "Counter": {
     "increment": "增加",
     "decrement": "递减"

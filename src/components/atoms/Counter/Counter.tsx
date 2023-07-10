@@ -22,7 +22,7 @@ export const Counter = () => {
 
   return (
     <div className="m-5 flex flex-col items-center">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center">
         <Button
           className="mr-4"
           aria-label="Decrement value"

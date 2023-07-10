@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ReduxState } from './reducer';
-import { ReduxDispatch } from './store';
+import type { ReduxState } from './reducer';
+import type { ReduxDispatch } from './store';
 
 /**
  * create a typed Async Thnuk Actions.

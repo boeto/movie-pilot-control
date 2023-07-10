@@ -60,7 +60,15 @@
     "error403": "User is not enabled",
     "error500": "Server error",
     "errorAccessTokenNotFound": "Access token not found",
-    "errorFailedToFetch": "Failed to fetch request"
+    "errorFailedToFetch": "Failed to fetch request",
+
+    "loginSuccess": "Login successfully",
+    "logoutSuccess": "Logout successfully",
+
+    "loggedin": "Logged in",
+    "notloggedin": "Not logged in",
+    "loginFirst": "Log in first...",
+    "logout": "Logout"
   },
 
   "NotFoundPage": {
@@ -69,9 +77,6 @@
     "backHome": "Go Back Home"
   },
 
-  "HomePage": {
-    "welcome": "Welcome"
-  },
   "Counter": {
     "increment": "Increment",
     "decrement": "Decrement"

@@ -9,7 +9,7 @@ import {
   LangProps,
   localeOption,
 } from '@/common';
-import { DarkModeScript, LayoutPageMain } from '@/components';
+import { DarkModeScript, LayoutPageMain, Toast } from '@/components';
 import { StoreProviders } from '@/store';
 
 import '@/styles/globals.css';
@@ -43,7 +43,10 @@ const LocaleLayout = async ({
         <DarkModeScript />
         <StoreProviders>
           <NextIntlClientProvider locale={locale} messages={localeMessages}>
-            <LayoutPageMain locale={locale}>{children}</LayoutPageMain>
+            <div id="root" className="relative overflow-x-hidden">
+              <Toast />
+              <LayoutPageMain locale={locale}>{children}</LayoutPageMain>
+            </div>
           </NextIntlClientProvider>
         </StoreProviders>
       </body>

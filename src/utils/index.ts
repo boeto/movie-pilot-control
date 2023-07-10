@@ -4,3 +4,4 @@ export * from './merge-deep';
 export * from './promise';
 export * from './set-dark-mode';
 export * from './sort';
+export * from './string';

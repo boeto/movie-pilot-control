@@ -448,7 +448,6 @@ const NavbarExpand: FC = () => {
           </div>
           <div className="flex items-center lg:gap-3">
             <ShowCounter />
-            {/* <ShowAuthInfo></ShowAuthInfo> */}
             <div className="flex items-center">
               <button
                 type="button"

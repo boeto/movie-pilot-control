@@ -14,13 +14,17 @@ const findCollapseLabelByPath = (path: string) => {
   return collapse?.collapseLabel;
 };
 
-// const findPath = ({ itemLabel, collapseLabel }: PathLanbels) => {
 const findPath = (itemLabel: string, collapseLabel?: string) => {
   const paths = createPaths();
   if (collapseLabel) {
     const collapse = paths.find(
       (c) => 'collapseLabel' in c && c.collapseLabel === collapseLabel,
     ) as PathsCollapse;
+
+    if (!collapse) {
+      return '/not-found';
+    }
+
     const item = collapse.item.find((i) => i.itemLabel === itemLabel);
 
     return item?.path || '/not-found';
@@ -33,7 +37,6 @@ const findPath = (itemLabel: string, collapseLabel?: string) => {
 
 const getLocalePath = (
   locale: string = localeOption.defaultLocale,
-  // pathLanbels: PathLanbels = { itemLabel: 'dashboard' },
   itemLabel = 'dashboard',
   collapseLabel?: string,
 ) => {

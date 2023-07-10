@@ -6,7 +6,6 @@
   "Sidebar": {
     "dashboard": "儀表板",
     "search": "搜索",
-
     "discover": "發現",
     "discoverRanking": "榜單推薦",
     "discoverDoubanMovie": "豆瓣電影",
@@ -14,70 +13,56 @@
     "discoverTMDBMovie": "TMDB電影",
     "discoverTMDBTv": "TMDB劇集",
     "discoverBangumi": "BANGUMI",
-
     "subscribe": "訂閱",
     "subscribeMovie": "電影",
     "subscribeTv": "劇集",
     "subscribeCustom": "自定義",
-
     "download": "下載",
     "downloadDownloading": "正在下載",
     "downloadDownloaded": "最近下載",
     "downloadHistory": "歷史記錄",
-
     "site": "站點",
     "siteManagement": "站點管理",
     "siteStatistics": "數據統計",
     "siteBrushtask": "刷流任務",
     "siteResources": "站點資源",
-
     "plugins": "插件",
     "pluginsInstalled": "已安裝",
     "pluginsNotInstall": "未安裝",
-
     "settings": "設置",
     "settingsBasic": "基礎",
     "settingsLibrary": "媒體庫",
-
     "auth": "認證",
     "authLogin": "登錄",
     "authUsers": "用戶"
   },
-
   "Auth": {
     "title": "LOGIN MOVIEPILOT",
-
-    "login": "登入",
-    "logging": "登入中 ...",
-
-    "username": "名稱",
+    "login": "登錄",
+    "logging": "登錄中 ...",
+    "username": "用戶名",
     "password": "密碼",
+    "usernameError": "用戶名為必填項",
+    "passwordError": "密碼為必填項",
+    "errorLogin": "登錄失敗: ",
+    "error401": "用戶名或密碼錯誤",
+    "error403": "用戶未啟用",
+    "error500": "服務器錯誤",
+    "errorAccessTokenNotFound": "未獲取訪問令牌",
+    "errorFailedToFetch": "請求登錄失敗",
+    "loginSuccess": "登錄成功",
+    "logoutSuccess": "註銷成功",
 
-    "usernameError": "使用者名稱為必填欄位",
-    "passwordError": "密碼為必填欄位",
-
-    "errorLogin": "登入失敗：",
-    "error401": "使用者名稱或密碼錯誤",
-    "error403": "使用者未啟用",
-    "error500": "伺服器錯誤",
-    "errorAccessTokenNotFound": "未取得存取令牌",
-    "errorFailedToFetch": "請求登入失敗"
+    "loggedin": "已登錄",
+    "notloggedin": "未登錄",
+    "loginFirst": "請先登錄...",
+    "logout": "註銷"
   },
-
   "NotFoundPage": {
-    "title": "404 頁面去哪了",
+    "title": "404 頁面哪去了",
     "description": "哎呀！看起來你來到了一個神秘的地方。不要慌，點擊下面的按鈕回家～",
     "backHome": "回家吧騷年"
   },
-
-  "HomePage": {
-    "welcome": "歡迎"
-  },
-  "Counter": {
-    "increment": "增加",
-    "decrement": "遞減"
-  },
-  "Menu": {
-    "dashboard": "儀表板"
-  }
+  "Counter": { "increment": "增加", "decrement": "遞減" },
+  "Menu": { "dashboard": "儀表板" }
 }

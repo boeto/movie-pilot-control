@@ -29,6 +29,7 @@ const SidebarMonitor: FC = () => {
     };
 
     document.addEventListener('mousedown', handleMobileTapInsideMain);
+
     return () => {
       document.removeEventListener('mousedown', handleMobileTapInsideMain);
     };
